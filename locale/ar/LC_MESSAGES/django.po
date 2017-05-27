@@ -1,0 +1,1445 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-09 21:03+0100\n"
+"PO-Revision-Date: 2015-12-19 13:49+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#: supdem/forms.py:34
+msgid "You waited too long with filling out the form"
+msgstr "لقد انتظرت وقتا طويلا  لملء الاستمارة"
+
+#: supdem/forms.py:36
+msgid "please enable cookies"
+msgstr "قم بتمكين ملفات تعريف الارتباط."
+
+#: supdem/forms.py:49
+msgid "Email address already in use"
+msgstr "عنوان البريد الإلكتروني قيد الاستخدام بالفعل"
+
+#: supdem/forms.py:51
+msgid "Username required for creating a new user"
+msgstr "اسم المستخدم المطلوب لإنشاء مستخدم جديد"
+
+#: supdem/forms.py:53
+msgid "Password required for creating a new user"
+msgstr "كلمة المرور المطلوبة لإنشاء مستخدم جديد"
+
+#: supdem/forms.py:70
+msgid "The username and password were incorrect."
+msgstr "اسم المستخدم وكلمة المرور غير صحيحة."
+
+#: supdem/forms.py:88 supdem/forms.py:92
+msgid "Not all questions answered"
+msgstr "ليست كل الاسئلة مجابة"
+
+#: supdem/forms.py:103
+msgid "Maximum number of claims reached"
+msgstr "بلغ الحد الأقصى لعدد الطلبات."
+
+#: supdem/templates/supdem/about.html:2 supdem/templates/supdem/base.html:122
+msgid "About us"
+msgstr "معلومات عنا"
+
+#: supdem/templates/supdem/about.html:8
+msgid "Refugive.com: a marketplace for refugees and neighbours"
+msgstr "Refugive.com:  سوق للاجئين و السكان المحليين"
+
+#: supdem/templates/supdem/about.html:14
+msgid ""
+"A new website for and by the neighbourhood: Refugive.com, a free marketplace "
+"for both refugees and neighbours. Our site wants to match the wishes of "
+"refugees to what neighbours are willing to share. Clothes for children and "
+"adults of course, but also books, games and social contacts. How about "
+"cooking a meal together, or doing sports?"
+msgstr ""
+"موقع جديد من و الى الجيران: Refugive.com، سوق مجاني لكل من اللاجئين والحي "
+"السكني. موقعنا يريد ان يوافق بين رغبات اللاجئين مع سكان الحي الذين هم على "
+"استعداد لمشاركتهم. ملابس للأطفال والكبار بالطبع، ولكن أيضا الكتب والألعاب "
+"والاتصالات الاجتماعية. ماذا عن طبخ وجبة معا، أو ممارسة الرياضة؟"
+
+#: supdem/templates/supdem/about.html:16
+msgid ""
+"Are you in need of something - or: do you have clothes, things or time to "
+"spare? Have a look around on Refugive.com and meet your new neighbours! If "
+"you are a refugee, it is free to advertise your needs and wishes - but you "
+"can only reply to two offers made by locals at a time. Of course ads are "
+"free for locals as well, but offers should only be made within walking "
+"distance of the refugee center. And no money should trade hands."
+msgstr ""
+"هل أنت في حاجة إلى شيء - أو: هل لديك ملابس و اشياء محتفظ بها لست بحاجة لها؟ "
+"إلقي نظرة على Refugive.com ولبي حاجات جيرانكم الجدد! إذا كنت لاجئا، فيمكنك "
+"مجانا للإعلان عن احتياجاتك ورغباتك  - ولكن يمكنك الرد فقط لاثنين من العروض "
+"المقدمة من قبل السكان المحليين في كل مرة. بالطبع إعلانات مجانية للسكان "
+"المحليين أيضا، ولكن ينبغي أن تكون العروض على بعد مسافة قصيرة سيرا على "
+"الأقدام من مركز اللاجئين. ويجب أن لا يطلب مال بالمقابل."
+
+#: supdem/templates/supdem/about.html:18
+msgid ""
+"Refugive was started by a group of people in Bezuidenhout, The Hague wanting "
+"to help refugees in their neighbourhood. Refugive.com is a non profit "
+"website."
+msgstr ""
+"بدأ Refugive من قبل مجموعة من الناس في Bezuidenhout، لاهاي ترغب في مساعدة "
+"اللاجئين في حيهم. Refugive.com هو ليس موقع تجاري و غير ربحي."
+
+#: supdem/templates/supdem/about.html:20
+msgid "Best regards,<br>Jasper, Jeroen, Krista, Maaike and Tijs"
+msgstr ",مع اطيب التحيات<br>Jasper, Jeroen, Krista, Maaike and Tijs"
+
+#: supdem/templates/supdem/adddialogue.html:5
+msgid "Would you like to leave a message?"
+msgstr "هل ترغب في ترك رسالة؟"
+
+#: supdem/templates/supdem/adddialogue.html:5
+msgid "Please write your message in English, if you can."
+msgstr "الرجاء كتابة رسالتك باللغة الإنجليزية، إذا كنت تستطيع."
+
+#: supdem/templates/supdem/adddialogue.html:18
+#: supdem/templates/supdem/item.html:110
+msgid "Your message:"
+msgstr "الرسائل الخاص بك"
+
+#: supdem/templates/supdem/adddialogue.html:24
+#: supdem/templates/supdem/additem.html:47
+msgid "Your account"
+msgstr "حسابك"
+
+#: supdem/templates/supdem/adddialogue.html:25
+#: supdem/templates/supdem/additem.html:48
+msgid "Your username:"
+msgstr "اسم المُستخدم خاصتك:"
+
+#: supdem/templates/supdem/adddialogue.html:26
+#: supdem/templates/supdem/additem.html:49
+#: supdem/templates/supdem/additem.html:72
+msgid "Your email address:"
+msgstr "عنوان بريدك الإلكتروني"
+
+#: supdem/templates/supdem/adddialogue.html:31
+msgid "New user"
+msgstr "مستخدم جديد"
+
+#: supdem/templates/supdem/adddialogue.html:47
+msgid "I have an account"
+msgstr "لدي حساب بالفعل"
+
+#: supdem/templates/supdem/adddialogue.html:61
+msgid "Reserve this for me, please"
+msgstr "احجز لي هذا من فضلك"
+
+#: supdem/templates/supdem/adddialogue.html:61
+msgid "Send"
+msgstr "إرسال"
+
+#: supdem/templates/supdem/additem.html:6
+msgid "What would you like to offer?"
+msgstr "ماذا تريد أن تقدم؟"
+
+#: supdem/templates/supdem/additem.html:6
+msgid "What are you looking for?"
+msgstr "ما الذي تبحث عنه ؟"
+
+#: supdem/templates/supdem/additem.html:7
+msgid "Please write your posting in English, if you can."
+msgstr "يرجى كتابة المنشور الخاص بك باللغة الإنجليزية، إذا كان ذلك ممكنا."
+
+#: supdem/templates/supdem/additem.html:15
+#: supdem/templates/supdem/item.html:25
+msgid "Category:"
+msgstr "النوع:"
+
+#: supdem/templates/supdem/additem.html:35
+msgid "Describe this item:"
+msgstr "وصف هذا البند:"
+
+#: supdem/templates/supdem/additem.html:54
+msgid "Are you a new user?"
+msgstr "هل أنت مستخدم جديد؟"
+
+#: supdem/templates/supdem/additem.html:56
+msgid "Your email address (not shown on the website):"
+msgstr "عنوان بريدك الإلكتروني (لا يظهر على الموقع):"
+
+#: supdem/templates/supdem/additem.html:61
+msgid "Choose a password:"
+msgstr "اختر كلمة مرور:"
+
+#: supdem/templates/supdem/additem.html:66
+msgid "Choose a username (visible on the website):"
+msgstr "اختر اسم المستخدم (ضاهر على الموقع):"
+
+#: supdem/templates/supdem/additem.html:70
+msgid "Or do you have an account?"
+msgstr "أو هل لديك حساب؟"
+
+#: supdem/templates/supdem/additem.html:77
+msgid "Your password:"
+msgstr "كلمة المرور الخاصة بك"
+
+#: supdem/templates/supdem/additem.html:84
+msgid "Submit posting"
+msgstr " انشاء اعلان"
+
+#: supdem/templates/supdem/base.html:15 supdem/templates/supdem/base.html:17
+#: supdem/templates/supdem/index.html:9
+msgid ""
+"A refugee may need something. A local might have a spare item. Use this "
+"website to get in touch."
+msgstr ""
+"قد يحتاج لاجئ الى شيء, مواطن لديه اشياء لا يحتاجها, استخدم هذا الموقع للتواصل"
+
+#: supdem/templates/supdem/base.html:46
+msgid "Switch language"
+msgstr "تبديل اللغة"
+
+#: supdem/templates/supdem/base.html:59 supdem/templates/supdem/base.html:61
+#: supdem/templates/supdem/base.html:63
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+#: supdem/templates/supdem/base.html:77 supdem/templates/supdem/base.html:79
+#: supdem/templates/supdem/mypage.html:7
+msgid "Your items"
+msgstr "المنشورات الخاصة بك"
+
+#: supdem/templates/supdem/base.html:81
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+#: supdem/templates/supdem/base.html:85 supdem/templates/supdem/base.html:144
+#: supdem/templates/supdem/base.html:150
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+#: supdem/templates/supdem/base.html:89
+#, fuzzy
+#| msgid "I am a refugee."
+msgid "I am a refugee"
+msgstr "انا لاجئ."
+
+#: supdem/templates/supdem/base.html:90
+#, fuzzy
+#| msgid "I am a local."
+msgid "I am a local"
+msgstr "انا ساكن محلي"
+
+#: supdem/templates/supdem/base.html:92
+msgid "change"
+msgstr "تغيير"
+
+#: supdem/templates/supdem/base.html:93
+msgid "home"
+msgstr ""
+
+#: supdem/templates/supdem/base.html:122
+msgid "What is Refugive and how does it work?"
+msgstr "ما هو  Refugive وكيف يعمل؟"
+
+#: supdem/templates/supdem/base.html:131
+#, python-format
+msgid ""
+"Not living in or near %(centre)s? Choose <a href=\"%(navigation_url)s?"
+"ignoreses=1\">another centre</a>"
+msgstr ""
+"لا اعيش بالقرب من %(centre)s? أختر<a href=\"%(navigation_url)s?"
+"ignoreses=1\">مركز اخر</a>"
+
+#: supdem/templates/supdem/base.html:133
+msgid "Are you not a refugee?"
+msgstr "انت لست لاجئ؟"
+
+#: supdem/templates/supdem/base.html:133
+msgid "Refugive for locals"
+msgstr " Refugive للسكان المحليين"
+
+#: supdem/templates/supdem/base.html:134
+msgid "Are you a refugee?"
+msgstr "هل أنت لاجئ؟"
+
+#: supdem/templates/supdem/base.html:134
+msgid "Refugive for refugees"
+msgstr "Refugive للاجئين"
+
+#: supdem/templates/supdem/base.html:139
+#, python-format
+msgid ""
+"Tips, suggestions, complaints or questions? Please %(beginlink)sgive us "
+"feedback%(endlink)s"
+msgstr ""
+"نصائح ,اقتراحات ,شكاوى أو أسئلة؟ الرجاء  %(beginlink)s اعطنا رايك %(endlink)s"
+
+#: supdem/templates/supdem/base.html:147
+msgid "email"
+msgstr "بريد إلكتروني"
+
+#: supdem/templates/supdem/base.html:148
+msgid "password"
+msgstr "كلمة المرور"
+
+#: supdem/templates/supdem/base.html:151
+msgid "I lost my password"
+msgstr "لقد فقدت كلمة المرور الخاصة بي"
+
+#: supdem/templates/supdem/base.html:154
+msgid ""
+"Your account will automatically be created the first time you post something "
+"or react to a post."
+msgstr ""
+"سيتم تلقائيا إنشاء حسابك في المرة الأولى التي تنشر فيها شيئا أو ترد على منشور"
+
+#: supdem/templates/supdem/email/account_created.txt:3
+msgid "Welcome to Refugive.com!"
+msgstr ""
+
+#: supdem/templates/supdem/email/account_created.txt:6
+msgid "You just created a new account. Well done!"
+msgstr ""
+
+#: supdem/templates/supdem/email/account_created.txt:8
+#, fuzzy
+#| msgid ""
+#| "A new website for and by the neighbourhood: Refugive.com, a free "
+#| "marketplace for both refugees and neighbours. Our site wants to match the "
+#| "wishes of refugees to what neighbours are willing to share. Clothes for "
+#| "children and adults of course, but also books, games and social contacts. "
+#| "How about cooking a meal together, or doing sports?"
+msgid ""
+"Refugive.com is a free marketplace that matches refugees' wishes to what "
+"neighbours are willing to share. Clothes for children and adults of course, "
+"but also books, games and social contacts. How about cooking a meal "
+"together, or doing sports?"
+msgstr ""
+"موقع جديد من و الى الجيران: Refugive.com، سوق مجاني لكل من اللاجئين والحي "
+"السكني. موقعنا يريد ان يوافق بين رغبات اللاجئين مع سكان الحي الذين هم على "
+"استعداد لمشاركتهم. ملابس للأطفال والكبار بالطبع، ولكن أيضا الكتب والألعاب "
+"والاتصالات الاجتماعية. ماذا عن طبخ وجبة معا، أو ممارسة الرياضة؟"
+
+#: supdem/templates/supdem/email/account_created.txt:10
+#, python-format
+msgid ""
+"Are you in need of something - or: do you have clothes, things or time to "
+"spare? Have a look around at %(url)s and meet your new neighbours!"
+msgstr ""
+
+#: supdem/templates/supdem/email/base.txt:4
+#, python-format
+msgid "Hi %(fullname)s,"
+msgstr ""
+
+#: supdem/templates/supdem/email/base.txt:8
+msgid ""
+"Best regards,\n"
+"\n"
+"the Refugive team"
+msgstr ""
+
+#: supdem/templates/supdem/email/dialogue_ended.txt:4
+msgid "A dialogue was ended"
+msgstr ""
+
+#: supdem/templates/supdem/email/dialogue_ended.txt:8
+#, python-format
+msgid ""
+"%(ender_username)s ended the dialogue for posting '%(title)s' on Refugive."
+"com. This means that the posting is visible for all users again. Go to "
+"%(url)s to see the posting. After logging in you will be able to see the "
+"dialogue."
+msgstr ""
+
+#: supdem/templates/supdem/email/item_deleted.txt:4
+#, fuzzy
+#| msgid "The item was successfully deleted"
+msgid "An item was deleted"
+msgstr "تم بنجاح حذف العنصر"
+
+#: supdem/templates/supdem/email/item_deleted.txt:8
+#, python-format
+msgid ""
+"%(ender_username)s deleted the posting '%(title)s' on Refugive.com. Go to "
+"%(url)s to see the posting. After logging in you will be able to see the "
+"dialogue."
+msgstr ""
+
+#: supdem/templates/supdem/email/message_received.txt:4
+msgid "Someone replied to your ad on Refugive.com!"
+msgstr ""
+
+#: supdem/templates/supdem/email/message_received.txt:8
+#, python-format
+msgid ""
+"You have received a new reply to your posting '%(title)s' on Refugive.com. "
+"Go to %(url)s to read it. After logging in you will be able to see the reply."
+msgstr ""
+
+#: supdem/templates/supdem/email/password_reset.txt:4
+msgid "A new password for Refugive.com"
+msgstr ""
+
+#: supdem/templates/supdem/email/password_reset.txt:8
+#, python-format
+msgid ""
+"You requested a new password for Refugive.com! Right? If you did, go to "
+"%(url)s to enter a new password."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:12
+msgid "What is this?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:13
+msgid ""
+"We want to help the refugees in our neighbourhood. As a refugee, you can "
+"post your needs and wishes on this website, and locals can reply. Locals can "
+"offer both goods (e.g. clothes, toys, a suitcase, toiletries) and services. "
+"Or: an invitation to dinner or a fun activity."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:15
+msgid "How does it work?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:16
+msgid ""
+"For refugees: find the centre you're staying at. (Is the centre not listed? "
+"Let us know!) If you like any of the postings that are being offered, click "
+"the button that says 'Yes, please' and claim it. The author can then contact "
+"you about the next steps. Do you need anything else? Add a posting yourself "
+"and wait for a local to get back to you."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:17
+msgid ""
+"For locals: find the centre in your area. (Is it not listed? Let us know!) "
+"Then, either reply to a posting by a refugee who is requesting something, or "
+"create a posting yourself with something you can spare."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:18
+msgid ""
+"Whenever somebody replies to your posting, you will get an email message "
+"from us and your posting is hidden for other users. Further arrangements can "
+"be made by exchanging messages through the website: picking a date and a "
+"place to meet etc. These messages are not visible to others. Make sure to "
+"meet at a place at walking distance from the centre."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:20
+msgid "What are the rules?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:21
+msgid ""
+"This site was created only for refugees in 'AZC's' (refugee centres) and the "
+"locals in the area surrounding them. Locals are not allowed to ask for money "
+"when offering things and services. Only refugees can claim offers (no more "
+"than 2 claims at once). Locals cannot ask for goods or services and refugees "
+"cannot offer goods or services. And of course nobody can ask for or offer "
+"anything illegal."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:25
+msgid "Frequently asked questions"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:28
+#, fuzzy
+#| msgid "Your email address:"
+msgid "Who will see my email address?"
+msgstr "عنوان بريدك الإلكتروني"
+
+#: supdem/templates/supdem/how_it_works.html:29
+msgid ""
+"We will never show your email address on the website, and we won't share it "
+"with anyone. After submitting a posting, locals and refugees can have "
+"conversations through the website. In this process, email addresses aren't "
+"shared either."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:31
+#, fuzzy
+#| msgid "Your username:"
+msgid "And my username?"
+msgstr "اسم المُستخدم خاصتك:"
+
+#: supdem/templates/supdem/how_it_works.html:32
+msgid ""
+"Your username is public. If you add a post, everybody can see your username. "
+"When you reply to somebody else's posting, only the person you are replying "
+"to will see your username."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:39
+msgid "What should my message contain when I want to react?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:40
+msgid ""
+"It is up to you to make contact with the person you are reacting to. So it "
+"might be helpful to discuss when and where it would be convenient for you to "
+"meet. It is up to you to decide if and when you want to give your contact "
+"details to the person you are communicating with."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:43
+msgid "What should my description contain when I want to add a posting?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:44
+msgid ""
+"The more details you can add, the better. If you are offering something, be "
+"as detailed as possible about the condition of the product or the details of "
+"the service. A picture of a product may say more than a 1000 words. If you "
+"are requesting something, it might help to mention all aspects of the "
+"product or service that are relevant for you."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:47
+msgid "How will I receive the items?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:48
+msgid ""
+"No external party (like the centre, COA, Red Cross, Vluchtelingenwerk, "
+"Refugive) is involved. It is up to you and the person you are contacting to "
+"contact each other and set a meeting place and time. You can use Refugive to "
+"exchanges messages, so you can get to know the person you are contacting "
+"before sharing your contact details."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:50
+msgid "I am a bit embarrassed about asking for help. What should I do?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:51
+msgid ""
+"The locals who visit this website do that because they want to support "
+"refugees in their neighbourhood and make them feel welcome. For many locals "
+"it is hard to imagine what the people in the centres need. By adding a "
+"posting with an item or service that would really be useful to you, the "
+"locals can assist you much better. In other words, help locals help you by "
+"telling them what you need."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:54
+msgid ""
+"I have an event where multiple people can join. Like cooking for a group of "
+"people or giving language lessons. What should I do?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:55
+#: supdem/templates/supdem/how_it_works.html:59
+msgid ""
+"Once somebody replied to your posting, nobody else will see it. So you will "
+"not get more reactions. You can do two things to get new reactions. You can "
+"create a new item with the same title and description. Or you can start "
+"communicating outside the Refugive website. Then you can click 'end claim' "
+"so that others can see the posting again."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:58
+msgid ""
+"I need multiple items for multiple people in my centre. Like mattresses or "
+"educational material for a school in the centre. What should I do?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:61
+msgid ""
+"I reacted to a posting, but I didn't hear anything back. What should I do?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:62
+msgid ""
+"You can send a new message to that person by going to the detail page for "
+"the posting you reacted to. If you still don't hear anything back, you can "
+"choose 'end claim' from the detail page and choose another item to reply to."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:64
+msgid ""
+"When I tried to react to a posting, I got a message that I reached the "
+"maximum number of reactions. How can I react to something else?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:65
+msgid ""
+"You can only react to two postings at a time. If you want to react to "
+"another posting, you will have to end one of the other reactions first. You "
+"can do that by first going to an item you replied to and then clicking the "
+"'end claim' button."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:67
+msgid "My centre is not in the list. Can it be added please?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:68
+#, python-format
+msgid ""
+"You can request the addition of your centre in %(beginlink)sthis form"
+"%(endlink)s."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:70
+msgid "How can I help to make this website a success?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:71
+msgid ""
+"The more people know about refugive, the more effective the website will be. "
+"So you help us a lot by spreading the word. Share our initiative on social "
+"media and tell your friends! Furthermore it would help if you add postings. "
+"The more items are on this website, the more useful it will become for its "
+"users. Both for refugees and locals."
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:73
+msgid "Why don't I see my posting in the list with postings?"
+msgstr ""
+
+#: supdem/templates/supdem/how_it_works.html:74
+msgid ""
+"It could be that you are looking at the wrong list. If you are a local, you "
+"will only see requests by refugees. If you are a refugee, you will only see "
+"offers by locals. It could also be that somebody replied to your posting. In "
+"that case, we hide it for other people to make sure not too many people "
+"reply to the same posting. Or it could be that your item is expired."
+msgstr ""
+
+#: supdem/templates/supdem/inc/itemlist.html:19
+#, python-format
+msgid "Offered by <strong>%(username)s</strong>"
+msgstr ""
+
+#: supdem/templates/supdem/inc/itemlist.html:21
+#, python-format
+msgid "Requested by <strong>%(username)s</strong>"
+msgstr ""
+
+#: supdem/templates/supdem/index.html:3 supdem/templates/supdem/index.html:5
+#, fuzzy
+#| msgid "Choose a password:"
+msgid "Choose a centre"
+msgstr "اختر كلمة مرور:"
+
+#: supdem/templates/supdem/index.html:14 supdem/templates/supdem/index.html:22
+msgid "I am a refugee."
+msgstr "انا لاجئ."
+
+#: supdem/templates/supdem/index.html:16 supdem/templates/supdem/index.html:44
+msgid "I am a local."
+msgstr "انا ساكن محلي"
+
+#: supdem/templates/supdem/index.html:22
+msgid "This is my centre:"
+msgstr "هذا المركز الخاص بي"
+
+#: supdem/templates/supdem/index.html:27 supdem/templates/supdem/index.html:35
+#: supdem/templates/supdem/index.html:48
+#, fuzzy, python-format
+#| msgid "Your items"
+msgid "1 item"
+msgid_plural "%(counter)s items"
+msgstr[0] "المنشورات الخاصة بك"
+msgstr[1] "المنشورات الخاصة بك"
+msgstr[2] "المنشورات الخاصة بك"
+msgstr[3] "المنشورات الخاصة بك"
+msgstr[4] "المنشورات الخاصة بك"
+msgstr[5] "المنشورات الخاصة بك"
+
+#: supdem/templates/supdem/index.html:31 supdem/templates/supdem/index.html:52
+msgid "More"
+msgstr ""
+
+#: supdem/templates/supdem/index.html:44
+msgid "I am living near this centre:"
+msgstr "انا اعيش بالقرب من هذا المركز"
+
+#: supdem/templates/supdem/index.html:56
+#, fuzzy, python-format
+#| msgid "Your items"
+msgid "one item"
+msgid_plural "%(counter)s items"
+msgstr[0] "المنشورات الخاصة بك"
+msgstr[1] "المنشورات الخاصة بك"
+msgstr[2] "المنشورات الخاصة بك"
+msgstr[3] "المنشورات الخاصة بك"
+msgstr[4] "المنشورات الخاصة بك"
+msgstr[5] "المنشورات الخاصة بك"
+
+#: supdem/templates/supdem/index.html:63
+#, python-format
+msgid ""
+"%(beginlink)sAdd a suggestion%(endlink)s for a centre that we can add to "
+"this list."
+msgstr ""
+"%(beginlink)sإضافة اقتراح%(endlink)s لهذا المركز,  يمكننا أن نضيف  إقتراحك  "
+"إلى هذه القائمة."
+
+#: supdem/templates/supdem/item.html:2
+msgid "Posting:"
+msgstr ""
+
+#: supdem/templates/supdem/item.html:6
+#, python-format
+msgid "This is a free offer for a refugee living in %(centre)s."
+msgstr ""
+
+#: supdem/templates/supdem/item.html:7
+#, python-format
+msgid "A refugee living in %(centre)s needs this. Can you help?"
+msgstr ""
+
+#: supdem/templates/supdem/item.html:13
+#, python-format
+msgid "Offered by <strong>%(username)s</strong> "
+msgstr ""
+
+#: supdem/templates/supdem/item.html:15
+#, python-format
+msgid "Requested by <strong>%(username)s</strong> "
+msgstr ""
+
+#: supdem/templates/supdem/item.html:19
+msgid "expired!"
+msgstr ""
+
+#: supdem/templates/supdem/item.html:31
+msgid "Message:"
+msgstr "الرسالة:"
+
+#: supdem/templates/supdem/item.html:34
+msgid ""
+"Sorry, you reached the maximum number of claims. End another claim if you "
+"want to claim this item."
+msgstr ""
+
+#: supdem/templates/supdem/item.html:36
+#, fuzzy
+#| msgid "Yes, please *"
+msgid "Yes, please"
+msgstr "نعم, رجاءً"
+
+#: supdem/templates/supdem/item.html:36
+msgid "I can help"
+msgstr "يمكنني المساعدة"
+
+#: supdem/templates/supdem/item.html:54
+msgid "Manage this item"
+msgstr "إدارة هذا العنصر"
+
+#: supdem/templates/supdem/item.html:57
+msgid "Expiry date: "
+msgstr "انتهاء الصلاحية"
+
+#: supdem/templates/supdem/item.html:57
+msgid "Extend item"
+msgstr "توسيع العنصر"
+
+#: supdem/templates/supdem/item.html:60
+msgid "Delete this item"
+msgstr "حذف هذا العنصر"
+
+#: supdem/templates/supdem/item.html:65
+msgid "End claim"
+msgstr "انتهاء الطلب"
+
+#: supdem/templates/supdem/item.html:73
+msgid "Report as inappropriate"
+msgstr "الابلاغ عن شيء غير مناسب"
+
+#: supdem/templates/supdem/item.html:81
+#, fuzzy, python-format
+#| msgid "Your conversation with"
+msgid "Your conversation with %(the_other_username)s"
+msgstr "محادثتك مع"
+
+#: supdem/templates/supdem/item.html:82
+msgid "ended!"
+msgstr ""
+
+#: supdem/templates/supdem/item.html:90
+#, python-format
+msgid "<strong>You</strong> wrote on <strong>%(date)s</strong>"
+msgstr ""
+
+#: supdem/templates/supdem/item.html:94
+#, python-format
+msgid ""
+"<strong>%(the_other_username)s</strong> wrote on <strong>%(date)s</strong>"
+msgstr ""
+
+#: supdem/templates/supdem/item.html:114
+msgid "Add message"
+msgstr "اضافة رسالة"
+
+#: supdem/templates/supdem/list.html:4 supdem/templates/supdem/list.html:7
+#, fuzzy
+#| msgid "Your postings"
+msgid "Postings"
+msgstr "المنشورات الخاصة بك"
+
+#: supdem/templates/supdem/list.html:7
+msgid "These things are needed by refugees"
+msgstr "هذه الاشياء التي يحتاجها اللاجئِ"
+
+#: supdem/templates/supdem/list.html:7
+#, fuzzy
+#| msgid "These things are offered for free by your neighbours"
+msgid "These things are offered for free by locals"
+msgstr "يتم تقديم هذه الأشياء مجانا عن طريق جيرانك"
+
+#: supdem/templates/supdem/list.html:12
+#, fuzzy
+#| msgid "These things are needed by refugees"
+msgid "These things are needed by refugees. Perhaps you can help?"
+msgstr "هذه الاشياء التي يحتاجها اللاجئِ"
+
+#: supdem/templates/supdem/list.html:12
+#, fuzzy
+#| msgid "These things are offered for free by your neighbours"
+msgid ""
+"These things are offered for free by your neighbours. Please choose 1 or 2 "
+"things you need."
+msgstr "يتم تقديم هذه الأشياء مجانا عن طريق جيرانك"
+
+#: supdem/templates/supdem/list.html:13 supdem/templates/supdem/list.html:100
+msgid "Create a posting"
+msgstr " انشاء اعلان"
+
+#: supdem/templates/supdem/list.html:23
+msgid "There are no relevant postings for your search."
+msgstr "ليس هناك أية منشورات ذات صلة للبحث الخاص بك."
+
+#: supdem/templates/supdem/list.html:28
+msgid "Category"
+msgstr "التصنيف"
+
+#: supdem/templates/supdem/list.html:37 supdem/templates/supdem/list.html:47
+msgid "Show everything"
+msgstr "إظهار كل شيء"
+
+#: supdem/templates/supdem/list.html:57
+msgid "previous"
+msgstr "السابق"
+
+#: supdem/templates/supdem/list.html:61
+msgid "Page"
+msgstr "الصفحة"
+
+#: supdem/templates/supdem/list.html:65
+msgid "next"
+msgstr "التالي"
+
+#: supdem/templates/supdem/list.html:79
+msgid "Would you like to offer something to a refugee?"
+msgstr "هل تريد أن تقدم شيئا ما للاجئ؟"
+
+#: supdem/templates/supdem/list.html:83
+msgid "Your ad will be visible to refugees"
+msgstr "إعلانك سيكون مرئياً للاجئين"
+
+#: supdem/templates/supdem/list.html:86
+msgid "Are you a refugee and do you need something else? Ask a local!"
+msgstr "هل أنت لاجئ وتحتاج إلى شيء آخر؟ اسال السكان المحليين!"
+
+#: supdem/templates/supdem/list.html:90
+msgid "Your request will be visible to locals"
+msgstr "سيكون طلبك مرئيا للجميع"
+
+#: supdem/templates/supdem/list.html:95
+msgid "Please choose a category:"
+msgstr "الرجاء اختيار تصنيف"
+
+#: supdem/templates/supdem/mypage.html:2 supdem/templates/supdem/mypage.html:3
+#, fuzzy
+#| msgid "Your message:"
+msgid "Your page"
+msgstr "الرسائل الخاص بك"
+
+#: supdem/templates/supdem/mypage.html:12
+msgid "Your messages"
+msgstr "الرسائل الخاصة بك"
+
+#: supdem/templates/supdem/mypage.html:24
+msgid "Posted by:"
+msgstr "أرسلت بواسطة"
+
+#: supdem/templates/supdem/mypage.html:30
+msgid "You have not yet replied to any postings."
+msgstr " انت لم تقم بالرد حتى الان على أي منشور."
+
+#: supdem/templates/supdem/mypage.html:36
+msgid "Your postings"
+msgstr "المنشورات الخاصة بك"
+
+#: supdem/templates/supdem/mypage.html:39
+msgid "You have not yet added any postings."
+msgstr "لم تقم حتى الان بإضافة اي منشور."
+
+#: supdem/templates/supdem/newpassword.html:6
+msgid "So you want to change your password?"
+msgstr "هل تريد تغيير كلمة المرور الخاصة بك؟"
+
+#: supdem/templates/supdem/newpassword.html:10
+msgid "Enter your new password here."
+msgstr "أدخل كلمة المرور الجديدة الخاصة بك هنا."
+
+#: supdem/templates/supdem/newpassword.html:23
+msgid "Update password"
+msgstr "تحديث كلمة المرور"
+
+#: supdem/templates/supdem/postersflyers.html:2
+msgid "Do you need anything? Go to: www.refugive.com"
+msgstr ""
+
+#: supdem/templates/supdem/postersflyers.html:3
+msgid ""
+"Here you can find things your new neighbours are offering for free – and you "
+"can ask for something yourself. We would like to help!"
+msgstr ""
+
+#: supdem/templates/supdem/postersflyers.html:4
+msgid ""
+"Clothes – Shoes – Toiletries – Toys – Lessons – Social activities – Share a "
+"meal etc."
+msgstr ""
+
+#: supdem/templates/supdem/postersflyers.html:5
+msgid ""
+"Refugive.com was created by a couple of neighbours from Den Haag. Can’t find "
+"what you need? New items are added every day. And don’t hesitate to add a "
+"posting yourself!"
+msgstr ""
+
+#: supdem/templates/supdem/resetpassword.html:6
+msgid "So you forgot your password?"
+msgstr " هل نسيت كلمة المرور الخاصة بك؟"
+
+#: supdem/templates/supdem/resetpassword.html:7
+msgid ""
+"Do not worry! Fill in your email address below, and we will send you a link "
+"to reset your password."
+msgstr ""
+"لا تقلق! املء عنوان بريدك الالكتروني أدناه، وسوف نرسل لك رابطا لإعادة تعيين "
+"كلمة المرور الخاصة بك."
+
+#: supdem/templates/supdem/resetpassword.html:10
+msgid "Sorry, there is no account with this email address."
+msgstr "عذرا، لا يوجد أي حساب مرتبط بهذا البريد الإلكتروني."
+
+#: supdem/templates/supdem/resetpassword.html:24
+msgid "Reset password"
+msgstr "إعادة تعيين كلمة المرور"
+
+#. Translators: category 'child clothes'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:5
+msgid "cat-1-name"
+msgstr "ملابس اطفال"
+
+#. Translators: category 'Adult clothes'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:8
+msgid "cat-2-name"
+msgstr "ملابس للكبار"
+
+#. Translators: category 'Shoes'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:11
+msgid "cat-4-name"
+msgstr "احذية"
+
+#. Translators: category 'Services and activities'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:14
+msgid "cat-5-name"
+msgstr "الخدمات و النشاطات"
+
+#. Translators: category 'Toiletries'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:17
+msgid "cat-6-name"
+msgstr "مستلزمات النظافة"
+
+#. Translators: category 'Toys, books, etc.'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:20
+msgid "cat-7-name"
+msgstr "العاب, كتب, الى اخره"
+
+#. Translators: category 'Telecommunication'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:23
+msgid "cat-8-name"
+msgstr "الاتصالات"
+
+#. Translators: category 'Other'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:26
+msgid "cat-9-name"
+msgstr "اخرى"
+
+#. Translators: Category Question 'Sex'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:29
+msgid "catque-3-name"
+msgstr "الجنس"
+
+#. Translators: Category Question 'Size'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:32
+msgid "catque-4-name"
+msgstr "الاحجام"
+
+#. Translators: Category Question 'Sex'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:35
+msgid "catque-5-name"
+msgstr "الجنس"
+
+#. Translators: Category Question 'Size'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:38
+msgid "catque-6-name"
+msgstr "الحجم"
+
+#. Translators: Category Question 'Size'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:41
+msgid "catque-7-name"
+msgstr "الحجم"
+
+#. Translators: Category Question 'Kind'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:44
+msgid "catque-8-name"
+msgstr " الطفل"
+
+#. Translators: Category Question option 'Boy'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:47
+msgid "catqueopt-17-name"
+msgstr "صبي"
+
+#. Translators: Category Question option 'Girl'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:50
+msgid "catqueopt-18-name"
+msgstr "فتاة"
+
+#. Translators: Category Question option 'Unisex'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:53
+msgid "catqueopt-19-name"
+msgstr "للجنسين"
+
+#. Translators: Category Question option '0'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:56
+msgid "catqueopt-20-name"
+msgstr "0"
+
+#. Translators: Category Question option '1'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:59
+msgid "catqueopt-21-name"
+msgstr "1"
+
+#. Translators: Category Question option '2'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:62
+msgid "catqueopt-22-name"
+msgstr "2"
+
+#. Translators: Category Question option '3'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:65
+msgid "catqueopt-23-name"
+msgstr "3"
+
+#. Translators: Category Question option '4'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:68
+msgid "catqueopt-24-name"
+msgstr "4"
+
+#. Translators: Category Question option '5'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:71
+msgid "catqueopt-25-name"
+msgstr "5"
+
+#. Translators: Category Question option '6 and 7'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:74
+msgid "catqueopt-26-name"
+msgstr " 6 و7"
+
+#. Translators: Category Question option '8 and 9'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:77
+msgid "catqueopt-27-name"
+msgstr "8 و9"
+
+#. Translators: Category Question option '10 and 11'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:80
+msgid "catqueopt-28-name"
+msgstr "10 و 11"
+
+#. Translators: Category Question option '12 and 13'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:83
+msgid "catqueopt-29-name"
+msgstr "12 و 13"
+
+#. Translators: Category Question option '14 and older'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:86
+msgid "catqueopt-30-name"
+msgstr "14 و اكبر"
+
+#. Translators: Category Question option 'Female'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:89
+msgid "catqueopt-31-name"
+msgstr "انثى"
+
+#. Translators: Category Question option 'Male'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:92
+msgid "catqueopt-32-name"
+msgstr "ذكر"
+
+#. Translators: Category Question option 'Unisex'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:95
+msgid "catqueopt-33-name"
+msgstr "للجنسين"
+
+#. Translators: Category Question option 'Extra small'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:98
+msgid "catqueopt-34-name"
+msgstr "XS"
+
+#. Translators: Category Question option 'Small'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:101
+msgid "catqueopt-35-name"
+msgstr "S"
+
+#. Translators: Category Question option 'Medium'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:104
+msgid "catqueopt-36-name"
+msgstr "M"
+
+#. Translators: Category Question option 'Large'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:107
+msgid "catqueopt-37-name"
+msgstr "L"
+
+#. Translators: Category Question option 'Extra large'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:110
+msgid "catqueopt-38-name"
+msgstr "XL"
+
+#. Translators: Category Question option 'Extre extra large'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:113
+msgid "catqueopt-39-name"
+msgstr "XXL"
+
+#. Translators: Category Question option 'one size'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:116
+msgid "catqueopt-40-name"
+msgstr "حجم واحد"
+
+#. Translators: Category Question option 'baby'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:119
+msgid "catqueopt-41-name"
+msgstr "رضيع"
+
+#. Translators: Category Question option '18'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:122
+msgid "catqueopt-42-name"
+msgstr "18"
+
+#. Translators: Category Question option '19'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:125
+msgid "catqueopt-43-name"
+msgstr "19"
+
+#. Translators: Category Question option '20'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:128
+msgid "catqueopt-44-name"
+msgstr "20"
+
+#. Translators: Category Question option '21'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:131
+msgid "catqueopt-45-name"
+msgstr "21"
+
+#. Translators: Category Question option '22'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:134
+msgid "catqueopt-46-name"
+msgstr "22"
+
+#. Translators: Category Question option '23'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:137
+msgid "catqueopt-47-name"
+msgstr "23"
+
+#. Translators: Category Question option '24'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:140
+msgid "catqueopt-48-name"
+msgstr "24"
+
+#. Translators: Category Question option '25'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:143
+msgid "catqueopt-49-name"
+msgstr "25"
+
+#. Translators: Category Question option '26'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:146
+msgid "catqueopt-50-name"
+msgstr "26"
+
+#. Translators: Category Question option '27'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:149
+msgid "catqueopt-51-name"
+msgstr "27"
+
+#. Translators: Category Question option '28'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:152
+msgid "catqueopt-52-name"
+msgstr "28"
+
+#. Translators: Category Question option '29'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:155
+msgid "catqueopt-53-name"
+msgstr "29"
+
+#. Translators: Category Question option '30'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:158
+msgid "catqueopt-54-name"
+msgstr "30"
+
+#. Translators: Category Question option '31'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:161
+msgid "catqueopt-55-name"
+msgstr "31"
+
+#. Translators: Category Question option '32'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:164
+msgid "catqueopt-56-name"
+msgstr "32"
+
+#. Translators: Category Question option '33'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:167
+msgid "catqueopt-57-name"
+msgstr "33"
+
+#. Translators: Category Question option '34'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:170
+msgid "catqueopt-58-name"
+msgstr "34"
+
+#. Translators: Category Question option '35'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:173
+msgid "catqueopt-59-name"
+msgstr "35"
+
+#. Translators: Category Question option '36'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:176
+msgid "catqueopt-60-name"
+msgstr "36"
+
+#. Translators: Category Question option '37'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:179
+msgid "catqueopt-61-name"
+msgstr "37"
+
+#. Translators: Category Question option '38'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:182
+msgid "catqueopt-62-name"
+msgstr "37"
+
+#. Translators: Category Question option '39'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:185
+msgid "catqueopt-63-name"
+msgstr "39"
+
+#. Translators: Category Question option '40'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:188
+msgid "catqueopt-64-name"
+msgstr "40"
+
+#. Translators: Category Question option '41'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:191
+msgid "catqueopt-65-name"
+msgstr "41"
+
+#. Translators: Category Question option '42'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:194
+msgid "catqueopt-66-name"
+msgstr "42"
+
+#. Translators: Category Question option '43'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:197
+msgid "catqueopt-67-name"
+msgstr "43"
+
+#. Translators: Category Question option '44'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:200
+msgid "catqueopt-68-name"
+msgstr "44"
+
+#. Translators: Category Question option '45'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:203
+msgid "catqueopt-69-name"
+msgstr "45"
+
+#. Translators: Category Question option '46'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:206
+msgid "catqueopt-70-name"
+msgstr "46"
+
+#. Translators: Category Question option '47'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:209
+msgid "catqueopt-71-name"
+msgstr "47"
+
+#. Translators: Category Question option '48'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:212
+msgid "catqueopt-72-name"
+msgstr "48"
+
+#. Translators: Category Question option 'Language lessons'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:215
+msgid "catqueopt-73-name"
+msgstr "دروس اللغة"
+
+#. Translators: Category Question option 'Other lessons'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:218
+msgid "catqueopt-74-name"
+msgstr "دروس اخرى"
+
+#. Translators: Category Question option 'Sports'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:221
+msgid "catqueopt-75-name"
+msgstr "رياضة"
+
+#. Translators: Category Question option 'Social'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:224
+msgid "catqueopt-76-name"
+msgstr "اجتماعي"
+
+#. Translators: Category Question option 'Dinner'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:227
+msgid "catqueopt-77-name"
+msgstr " العشاء"
+
+#. Translators: Category Question option 'Other'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:230
+msgid "catqueopt-78-name"
+msgstr "اخرى"
+
+#. Translators: Centre message for locals near 'Bezuidenhout'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:233
+msgid "cen-1-message_for_locals"
+msgstr ""
+
+#. Translators: Centre message for refugees near 'Bezuidenhout'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:236
+msgid "cen-1-message_for_refugees"
+msgstr ""
+
+#. Translators: Centre message for locals near 'Duinrell'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:239
+msgid "cen-2-message_for_locals"
+msgstr ""
+
+#. Translators: Centre message for refugees near 'Duinrell'
+#: supdem/templates/supdem/this_is_only_for_gettext_generated.html:242
+msgid "cen-2-message_for_refugees"
+msgstr ""
+
+#: supdem/templatetags/supdem_extras.py:17
+msgid "-"
+msgstr ""
+
+#: supdem/views.py:204
+msgid "Your reaction was successfully added"
+msgstr "تم بنجاح إضافة الرد الخاص بك"
+
+#: supdem/views.py:262
+msgid "The item was successfully deleted"
+msgstr "تم بنجاح حذف العنصر"
+
+#: supdem/views.py:281
+msgid "The item was successfully extended"
+msgstr "تم التعديل بنجاح"
+
+#: supdem/views.py:302
+msgid "The claim was successfully deleted"
+msgstr " تم حذفه بنجاح"
+
+#: supdem/views.py:314
+msgid "Invalid code. Please request a new code."
+msgstr "رمز غير صالح. الرجاء طلب رمز جديد."
+
+#: supdem/views.py:332
+msgid "The password has been changed"
+msgstr "تم تغيير كلمة المرور"
+
+#: supdem/views.py:366
+msgid "An email with a password recovery link has been send to you"
+msgstr "تم إرسال بريد الإلكتروني لك يتضمن كلمة مرور مؤقتة"
+
+#: supdem/views.py:386 supdem/views.py:388
+msgid "Incorrect username and/or password"
+msgstr "اسم المستخدم و / أو كلمة المرور غير صحيحة"
+
+#: supdem/views.py:469
+msgid "Your reply was send to the poster of the item"
+msgstr "تم ارسال الرد الخاص بك الى الناشر"
+
+#: supdem/views.py:534
+msgid "The item was successfully added"
+msgstr "تمت اضافة هذا البند بنجاح"
+
+#: templates/admin/base_site.html:3
+msgid "Django site admin"
+msgstr "ادارة موقع Django "
+
+#, fuzzy
+#~| msgid "About us"
+#~ msgid "About Refugive"
+#~ msgstr "معلومات عنا"
+
+#~ msgid "for refugees"
+#~ msgstr "الى اللاجئين"
+
+#~ msgid "No, I am a local!"
+#~ msgstr "انا ساكن محلي"
+
+#~ msgid "for locals"
+#~ msgstr "للسكان المحليين"
+
+#~ msgid "No, I am a refugee!"
+#~ msgstr "لا، أنا لاجئ!"
+
+#~ msgid "Perhaps you can help?"
+#~ msgstr "ربما يمكنك المساعدة؟"
+
+#~ msgid "Please choose 1 or 2 things you need."
+#~ msgstr "الرجاء اختيار 1 أو 2 من الأشياء التي تحتاج إليها."
+
+#~ msgid "you!"
+#~ msgstr "أنت!"
+
+#~ msgid "You"
+#~ msgstr "انت"
+
+#~ msgid "wrote on"
+#~ msgstr "وكتب على"
+
+#~ msgid ""
+#~ "Hi %(name)s,\n"
+#~ "\n"
+#~ "I'm interested in this item. Please get in touch!"
+#~ msgstr ""
+#~ "مرحبا %(name)s,\n"
+#~ "\n"
+#~ "انا مهتم بهذا المنشور, يرجى التواصل!"
+
+#~ msgid ""
+#~ "Hi %(name)s,\n"
+#~ "\n"
+#~ "I can help you with this. Let’s find out how to get it to you"
+#~ msgstr ""
+#~ "مرحبا %(name)s,\n"
+#~ "\n"
+#~ " يمكنني مساعدتك في ذلك. ومعرفة كيفية الحصول عليها لك"

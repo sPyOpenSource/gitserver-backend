@@ -1,0 +1,66 @@
+{% extends "supdem/base.html" %}{% load i18n %}{% load supdem_extras %}{% load staticfiles %}
+
+{% block content %}
+<div class="intro"><div class="wrap">
+  <h1>{% trans 'Would you like to leave a message?' %}</h1> <p>{% trans 'Please write your message in English, if you can.' %}</p>
+</div></div>
+<div class="main itempage">
+  <div class="wrap">
+
+
+<form action="{% url 'adddialogue' usertype=usertype centreslug=centre.slug itemid=item.id %}" method="post" class="posting">
+{% csrf_token %}
+{{ form.non_field_errors }}
+{{ form.timestamp.errors }}
+{{ form.timestamp }}
+
+<fieldset>
+    <label for="{{ form.description.id_for_label }}">{% trans 'Your message:' %}</label>
+    {{ form.description }}
+    {{ form.description.errors }}
+</fieldset>
+
+{% if user.is_authenticated %}
+<h2>{% trans 'Your account' %}</h2>
+<p>{% trans 'Your username:' %} <strong>{{ user.username }}</strong><br>
+{% trans 'Your email address:' %} <strong>{{ user.email }}</strong>
+</p>
+
+{% else %}
+<div class="loginornew">
+<div><h2>{% trans 'New user' %}</h2>
+<fieldset>
+    {{ form.new_email.label_tag }}
+    {{ form.new_email }}
+    {{ form.new_email.errors }}
+</fieldset>
+<fieldset>
+    {{ form.new_password.label_tag }}
+    {{ form.new_password }}
+    {{ form.new_password.errors }}
+</fieldset>
+<fieldset>
+    {{ form.new_username.label_tag }}
+    {{ form.new_username }}
+    {{ form.new_username.errors }}
+</fieldset></div>
+<div><h2>{% trans 'I have an account' %}</h2>
+<fieldset>
+    {{ form.existing_email.label_tag }}
+    {{ form.existing_email }}
+    {{ form.existing_email.errors }}
+</fieldset>
+<fieldset>
+    {{ form.existing_password.label_tag }}
+    {{ form.existing_password }}
+    {{ form.existing_password.errors }}
+</fieldset>
+</div></div>
+{% endif %}
+
+<input type="submit" value="{% if usertype == "refugee" %}{% trans 'Reserve this for me, please' %}{% else %}{% trans 'Send' %}{% endif %}" class="button" />
+</form>
+</div>
+</div>
+
+{% endblock content %}

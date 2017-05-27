@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% load supdem_extras %}
+{% load staticfiles %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+{% get_language_info_list for LANGUAGES as languages %}
+<html lang="{{ LANGUAGE_CODE }}">
+<!-- Version two point oh YES -->
+<head>
+    <title>{% block title %}{% endblock %} Refugive {% if centre %}in {{ centre.name }}{% endif %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="test" content="yo">
+    <meta name="description" content="{% trans 'A refugee may need something. A local might have a spare item. Use this website to get in touch.' %}">
+    <meta property="og:title" content="Refugive {% if centre %}{{ centre.name }}{% endif %}" />
+    <meta property="og:description" content="{% block metadesc %}{% endblock %}{% trans 'A refugee may need something. A local might have a spare item. Use this website to get in touch.' %}" />
+    <meta property="og:url" content="http://www.refugive.com" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'supdem/css/basic.css' %}" />
+    <script type="text/javascript" src="{% static 'supdem/js/script.js' %}"></script>
+	<!-- Google Analytics tracking code -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-70754571-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<style>
+	body {
+	    direction: {% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %};
+	}
+	</style>
+
+</head>
+<body class="{% block bodyclass %}{% endblock bodyclass %} v2">
+  <header>
+    <div class="wrap">
+    <div class="lang">
+      <div>
+	<span class="change">{% trans 'Switch language' %}:</span> <ul>
+	        {% for language in languages %}
+		{% if language.code == LANGUAGE_CODE %} <li><strong>{{ language.name_local }}</strong></li>{% else %}
+		<li><a href="/{{language.code}}{% if usertype %}/{{ usertype }}{% endif %}{% if centre %}/{{ centre.slug }}{% endif %}/">{{ language.name_local }}</a></li>{% endif %}
+	        {% endfor %}</ul>
+        </div>
+        <div class="title">
+          <h1><img src="{% static 'supdem/img/logo-refugive.svg' %}" width="200">
+            {% if centre %}<a href="{% url 'list' usertype=usertype centreslug=centre.slug %}" class="place"><span>{{ centre.name }}</span></a>{% endif %}
+          </h1>
+      <!--    <nav><ul><li>
+
+            {% if is_index or is_itemlist %}
+        	<strong>{% trans 'Home' %}</strong>
+            {% elif usertype and centre %}
+        	<a href="{% url 'list' usertype=usertype centreslug=centre.slug %}">{% trans 'Home' %}</a>
+            {% else %}
+        	<a href="{% url 'index' %}">{% trans 'Home' %}</a>
+            {% endif %}
+
+        </li>
+
+      </ul></nav>-->
+          </div>
+          </div>
+
+                <div class="egoblock {% if is_index %}short{% endif %}">
+                    <div class="login">
+                      {% if user.is_authenticated %}
+                          <span class="user">{{ user.username }} </span>
+                          <ul class="usernav"><li>{% if is_mypage %}
+                        		<strong>{% trans 'Your items' %}</strong>
+                        		{% else %}
+                        		<a href="{% url 'mypage' %}">{% trans 'Your items' %}</a>
+                            {% endif %}</li>
+                            <li>  <a href="{% url 'logout' %}">{% trans 'Log out' %}</a></li>
+                          </ul>
+
+                          {% else %}
+                          <a href="#loginform" class="openform">{% trans 'Log in' %}</a>
+                      {% endif %}
+                </div>{% if not is_index %}
+                <div class="ik">{% if usertype %}
+                    {% if usertype == "refugee" %}<span class="type"> {% trans 'I am a refugee' %} </span>
+                    {% elif usertype == "local" %}<span class="type"> {% trans 'I am a local' %} </span>
+                    {% endif %}
+              <a href="/nl/?ignoreses=1" class="change">{% trans 'change' %}</a>
+              {% else %}<a href="/nl/?ignoreses=1" class="change">{% trans 'home' %}</a> {% endif %}
+              </div>
+              {% endif %}
+                </div>
+          </div>
+            </header>
+
+
+<!-- The following code shows the alerts. Like 'new item created', 'claim removed' and so on-->
+
+{% if messages %}
+<div class="msg">
+  <div class="wrap">
+<ul>
+    {% for msg in messages %}
+    <li{% if msg.tags %} class="{{ msg.tags }}"{% endif %}>{{ msg }}</li>
+    {% endfor %}
+</ul>
+</div>
+</div>
+{% endif %}
+
+
+        {% block content %}{% endblock %}
+
+
+<footer>
+  <div class="wrap">
+    <div class="opm">
+      <p>{% trans 'What is Refugive and how does it work?' %} <a href="{% url 'about' %}">{% trans 'About us' %}</a></p>
+{% if centre %}
+    <div>
+      <p>
+		{% if usertype %}
+		  	{% url 'index' usertype=usertype as navigation_url %}
+		{% else %}
+		  	{% url 'index' as navigation_url %}
+		{% endif %}
+  		{% blocktrans with centre=centre.name %}Not living in or near {{ centre }}? Choose <a href="{{ navigation_url }}?ignoreses=1">another centre</a>{% endblocktrans %}
+      </p>
+      {% if usertype == "refugee" %}<p>{% trans 'Are you not a refugee?' %} <a href="{% if centre %}{% url 'list' usertype='local' centreslug=centre.slug %}{% else %}{% url 'index' usertype='local' %}?ignoreses=1{% endif %}" >{% trans 'Refugive for locals' %}</a></p>
+        {% elif usertype == "local" %}<p>{% trans 'Are you a refugee?' %} <a href="{% if centre %}{% url 'list' usertype='refugee' centreslug=centre.slug %}{% else %}{% url 'index' usertype='refugee' %}?ignoreses=1{% endif %}" >{% trans 'Refugive for refugees' %}</a></p>{% endif %}
+
+    </div>
+{% endif %}
+<div>
+	{% blocktrans with beginlink='<a href="https://docs.google.com/forms/d/1i1wh3T_YJY1ts8wx7yeRCALiPjtDDbrabWn5tuvx1Xg/viewform">' endlink="</a>" %}Tips, suggestions, complaints or questions? Please {{ beginlink }}give us feedback{{ endlink }}{% endblocktrans %}
+</div>
+</div>
+{% if not user.is_authenticated %}
+  <div id="loginform">
+    <h2>{% trans 'Log in' %}</h2>
+    	<form action="{% url 'login' %}" method="post">
+    		{% csrf_token %}
+    		{% trans 'email' %}: <input maxlength="50" name="email" value="{{ request.POST.email }}" type="text" />
+    		{% trans 'password' %}: <input maxlength="50" name="password" type="password" />
+    		<input name="url" value="{{ request.path }}" type="hidden" />
+    		<input type="submit" value="{% trans 'Log in' %}" class="button" />
+        <a href="{% url 'resetpassword' %}" class="reset">{% trans 'I lost my password' %}</a>
+    	</form>
+
+    	<p><em>{% trans 'Your account will automatically be created the first time you post something or react to a post.' %}</em></p>
+    </div>
+{% endif %}
+</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends "supdem/email/base.txt" %}{% load i18n %}
+
+
+{% block subject %}{% trans "Someone replied to your ad on Refugive.com!" %}{% endblock %}
+
+
+{% block body_txt %}
+{% blocktrans %}You have received a new reply to your posting '{{ title }}' on Refugive.com. Go to {{ url }} to read it. After logging in you will be able to see the reply.{% endblocktrans %}
+{% endblock %}

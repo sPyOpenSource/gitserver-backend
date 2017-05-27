@@ -1,0 +1,81 @@
+{% extends "supdem/base.html" %}{% load i18n %}{% load supdem_extras %}{% load staticfiles %}
+
+{% block title %}Refugive FAQ{% endblock title %}
+{% block bodyclass %}faq{% endblock bodyclass %}
+
+{% block content %}
+<div class="main itempage">
+  <div class="wrap">
+<section>
+
+   
+   <h2>{% trans 'What is this?' %}</h2>
+   <p>{% trans 'We want to help the refugees in our neighbourhood. As a refugee, you can post your needs and wishes on this website, and locals can reply. Locals can offer both goods (e.g. clothes, toys, a suitcase, toiletries) and services. Or: an invitation to dinner or a fun activity.' %}</p>
+   
+   <h2>{% trans 'How does it work?' %}</h2>
+   <p>{% trans "For refugees: find the centre you're staying at. (Is the centre not listed? Let us know!) If you like any of the postings that are being offered, click the button that says 'Yes, please' and claim it. The author can then contact you about the next steps. Do you need anything else? Add a posting yourself and wait for a local to get back to you." %}</p>
+   <p>{% trans "For locals: find the centre in your area. (Is it not listed? Let us know!) Then, either reply to a posting by a refugee who is requesting something, or create a posting yourself with something you can spare." %}</p>
+   <p>{% trans "Whenever somebody replies to your posting, you will get an email message from us and your posting is hidden for other users. Further arrangements can be made by exchanging messages through the website: picking a date and a place to meet etc. These messages are not visible to others. Make sure to meet at a place at walking distance from the centre." %}</p>
+
+<h2>{% trans "What are the rules?" %}</h2>
+<p>{% trans "This site was created only for refugees in 'AZC's' (refugee centres) and the locals in the area surrounding them. Locals are not allowed to ask for money when offering things and services. Only refugees can claim offers (no more than 2 claims at once). Locals cannot ask for goods or services and refugees cannot offer goods or services. And of course nobody can ask for or offer anything illegal." %}</p>
+
+
+
+  <h2>{% trans "Frequently asked questions" %}</h2>
+<dl>
+
+<dt>{% trans "Who will see my email address?" %}</dt>
+<dd>{% trans "We will never show your email address on the website, and we won't share it with anyone. After submitting a posting, locals and refugees can have conversations through the website. In this process, email addresses aren't shared either." %}</dd>
+
+<dt>{% trans "And my username?" %}</dt>
+<dd>{% trans "Your username is public. If you add a post, everybody can see your username. When you reply to somebody else's posting, only the person you are replying to will see your username." %}</dd>
+
+<!-- Deze lijkt mij niet nodig
+Jasper: I think some redundancy is not bad. Some people like to read manuals, other like
+to read the FAQ. But I do think we need a way to make it easy to scan through the questions. 
+Maybe by adding categories. Or/and by hiding the answers.
+ -->
+<dt>{% trans "What should my message contain when I want to react?" %}</dt>
+<dd>{% trans "It is up to you to make contact with the person you are reacting to. So it might be helpful to discuss when and where it would be convenient for you to meet. It is up to you to decide if and when you want to give your contact details to the person you are communicating with." %}</dd>
+
+<!-- Deze ook niet, we kunnen het evt in het formulier zelf zetten -->
+<dt>{% trans "What should my description contain when I want to add a posting?" %}</dt>
+<dd>{% trans "The more details you can add, the better. If you are offering something, be as detailed as possible about the condition of the product or the details of the service. A picture of a product may say more than a 1000 words. If you are requesting something, it might help to mention all aspects of the product or service that are relevant for you." %}</dd>
+
+<!-- Dit staat nu min of meer in de handleiding -->
+<dt>{% trans "How will I receive the items?" %}</dt>
+<dd>{% trans "No external party (like the centre, COA, Red Cross, Vluchtelingenwerk, Refugive) is involved. It is up to you and the person you are contacting to contact each other and set a meeting place and time. You can use Refugive to exchanges messages, so you can get to know the person you are contacting before sharing your contact details." %}</dd>
+
+<dt>{% trans "I am a bit embarrassed about asking for help. What should I do?" %}</dt>
+<dd>{% trans "The locals who visit this website do that because they want to support refugees in their neighbourhood and make them feel welcome. For many locals it is hard to imagine what the people in the centres need. By adding a posting with an item or service that would really be useful to you, the locals can assist you much better. In other words, help locals help you by telling them what you need." %}</dd>
+
+<!-- I am not satisfied with the answer below, but I don't know how to improve -->
+<dt>{% trans "I have an event where multiple people can join. Like cooking for a group of people or giving language lessons. What should I do?" %}</dt>
+<dd>{% trans "Once somebody replied to your posting, nobody else will see it. So you will not get more reactions. You can do two things to get new reactions. You can create a new item with the same title and description. Or you can start communicating outside the Refugive website. Then you can click 'end claim' so that others can see the posting again." %}</dd>
+
+<!-- I am not satisfied with the answer below, but I don't know how to improve -->
+<dt>{% trans "I need multiple items for multiple people in my centre. Like mattresses or educational material for a school in the centre. What should I do?" %}</dt>
+<dd>{% trans "Once somebody replied to your posting, nobody else will see it. So you will not get more reactions. You can do two things to get new reactions. You can create a new item with the same title and description. Or you can start communicating outside the Refugive website. Then you can click 'end claim' so that others can see the posting again." %}</dd>
+
+<dt>{% trans "I reacted to a posting, but I didn't hear anything back. What should I do?" %}</dt>
+<dd>{% trans "You can send a new message to that person by going to the detail page for the posting you reacted to. If you still don't hear anything back, you can choose 'end claim' from the detail page and choose another item to reply to." %}</dd>
+
+<dt>{% trans "When I tried to react to a posting, I got a message that I reached the maximum number of reactions. How can I react to something else?" %}</dt>
+<dd>{% trans "You can only react to two postings at a time. If you want to react to another posting, you will have to end one of the other reactions first. You can do that by first going to an item you replied to and then clicking the 'end claim' button." %}</dd>
+
+<dt>{% trans "My centre is not in the list. Can it be added please?" %}</dt>
+<dd>{% blocktrans with beginlink='<a href="http://goo.gl/forms/eWiV7U1NkC">' endlink="</a>" %}You can request the addition of your centre in {{ beginlink }}this form{{ endlink }}.{% endblocktrans %}</dd>
+
+<dt>{% trans "How can I help to make this website a success?" %}</td>
+<dd>{% trans "The more people know about refugive, the more effective the website will be. So you help us a lot by spreading the word. Share our initiative on social media and tell your friends! Furthermore it would help if you add postings. The more items are on this website, the more useful it will become for its users. Both for refugees and locals." %}</dd>
+
+<dt>{% trans "Why don't I see my posting in the list with postings?" %}</td>
+<dd>{% trans "It could be that you are looking at the wrong list. If you are a local, you will only see requests by refugees. If you are a refugee, you will only see offers by locals. It could also be that somebody replied to your posting. In that case, we hide it for other people to make sure not too many people reply to the same posting. Or it could be that your item is expired." %}</dd>
+
+</dl>
+
+
+</section>
+</div></div>
+{% endblock content %}

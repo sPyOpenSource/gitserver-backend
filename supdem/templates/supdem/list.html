@@ -1,0 +1,107 @@
+{% extends "supdem/base.html" %}
+{% load i18n %}{% load supdem_extras %}
+{% load staticfiles %}
+{% block title %}{% trans 'Postings' %} –{% endblock title %}
+{% block bodyclass %}home{% endblock bodyclass %}
+{% block metadesc %}
+{% if usertype == "local" %}{% trans 'These things are needed by refugees' %}{% elif usertype == "refugee" %}{% trans 'These things are offered for free by locals' %}{% else %}{% trans 'Postings' %}{% endif %} – {% endblock metadesc %}
+{% block content %}
+<section class="listings main">
+	<div class="intro">
+		<div class="wrap">
+			<p>{% if usertype == "local" %}{% trans 'These things are needed by refugees. Perhaps you can help?' %}{% elif usertype == "refugee" %}{% trans 'These things are offered for free by your neighbours. Please choose 1 or 2 things you need.' %}{% endif %}</p>
+			<a href="#makead" class="button sec makead">{% trans 'Create a posting' %}</a>
+		</div>
+	</div>
+	<div class="thelist">
+
+		<div class="wrap">
+
+			<!-- list with items -->
+{% if items.paginator.count %}
+			{% include "supdem/inc/itemlist.html" %}
+{% else %} <p><em>{% trans 'There are no relevant postings for your search.' %}</em></p>
+{% endif %}
+
+			<div class="filter">
+		{% if items.paginator.count %}
+		<h2>{% trans 'Category' %}</h2>{% endif %}
+				<ul>
+				{% for cat in filter_categories %}
+				{% if cat.is_current_filter %}<li><strong>{% listtrans 'cat' cat.id %}</strong> ({{ cat.num_items }})</li>
+				{% else %}
+				<li><a href="{{ cat.filter_url }}">{% listtrans 'cat' cat.id %}</a> ({{ cat.num_items }})</li>{% endif %}
+				{% endfor %}
+			</ul>
+			{% if request.GET.cf %}
+			<a href="{% url 'list' usertype=usertype centreslug=centre.slug %}" class="button sec">{% trans 'Show everything' %}</a>
+			{% endif %}
+				{% for question in filter_options %}
+				<h2>{% listtrans 'catque' question.id %}</h2>
+				<ul>
+				{% for opt in question.options %}{% if opt.num_items %}
+				<li>{% if opt.is_current_filter %}<strong>{% else %}<a href="{{ opt.filter_url }}">{% endif %}{% listtrans 'catqueopt' opt.id %}{% if opt.is_current_filter %} ({{ opt.num_items }})</strong>{% else %}</a>{% endif %}{% if not question.has_selection %} ({{ opt.num_items }}){% endif %}</li>
+				{% endif %}{% endfor %}
+				</ul>
+				{% if question.has_selection %}
+				<a href="{{ question.clear_option_filter_url }}" class="button sec">{% trans 'Show everything' %}</a>
+				{% endif %}
+				{% endfor %}
+		</div>
+		</div>
+		</div>{% if items.paginator.count %}
+<div class="wrap">
+		<div class="pagination">
+		    <span class="step-links">
+		        {% if items.has_previous %}
+		            <a href="?page={{ items.previous_page_number }}">{% trans 'previous' %}</a>
+		        {% endif %}
+
+		        <span class="current">
+		            {% trans 'Page' %} {{ items.number }} / {{ items.paginator.num_pages }}
+		        </span>
+
+		        {% if items.has_next %}
+		            <a href="?page={{ items.next_page_number }}">{% trans 'next' %}</a>
+		        {% endif %}
+		    </span>
+		</div>
+
+	</div>{% endif %}
+</section>
+
+{% if centre.is_active %}
+
+<section class="new">
+	<div class="wrap">
+		<!-- button for adding an item -->
+		{% if usertype == "local" %}
+			<h2 id="makead">{% trans 'Would you like to offer something to a refugee?' %}</h2>
+			{% if centre.show_message_for_locals %}
+				<p>{% listtrans 'cen' centre.id 'message_for_locals' %}</p>
+			{% else %}
+				<p>{% trans 'Your ad will be visible to refugees' %}</a></p>
+			{% endif %}
+		{% elif usertype == "refugee" %}
+			<h2 id="makead">{% trans 'Are you a refugee and do you need something else? Ask a local!' %}</h2>
+			{% if centre.show_message_for_refugees %}
+				<p>{% listtrans 'cen' centre.id 'message_for_locals' %}</p>
+			{% else %}
+					<p>{% trans 'Your request will be visible to locals' %}</a></p>
+			{% endif %}
+		{% endif %}
+		<form action="{% url 'additem' usertype=usertype centreslug=centre.slug %}" method="get">
+			<fieldset>
+				<label for="catid">{% trans 'Please choose a category:' %}</label>
+				<select name="catid">{% for cat in categories %}
+					<option value="{{ cat.id }}">{% listtrans "cat" cat %}</option>
+					{% endfor %}</select>
+			</fieldset>
+			<input type="submit" value="{% trans 'Create a posting' %}" class="button" />
+		</form>
+	</div>
+</section>
+
+{% endif %}
+
+{% endblock content %}

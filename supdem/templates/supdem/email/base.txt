@@ -1,0 +1,10 @@
+{% load i18n %}-- subject --
+{% block subject %}{% endblock %}
+-- body txt --
+{% blocktrans %}Hi {{ fullname }},{% endblocktrans %}
+
+{% block body_txt %}{% endblock %}
+
+{% blocktrans %}Best regards,
+
+the Refugive team{% endblocktrans %}

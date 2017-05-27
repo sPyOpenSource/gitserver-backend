@@ -1,0 +1,125 @@
+{% extends "supdem/base.html" %}{% load i18n %}{% load supdem_extras %}{% load staticfiles %}
+{% block metadesc %}{% trans 'Posting:' %} {{ item.title }} – {% endblock metadesc %}
+{% block content %}
+<div class="main itempage">
+  <div class="intro"><div class="wrap">
+<p>{% if item.is_offer %}{% blocktrans with centre=centre.name %}This is a free offer for a refugee living in {{ centre }}.{% endblocktrans %}
+  {% else %}{% blocktrans with centre=centre.name %}A refugee living in {{ centre }} needs this. Can you help?{% endblocktrans %}	{% endif %}</p></div></div>
+  <div class="wrap">
+<section>
+
+	<p class="postedby">
+		{% if item.is_offer %}
+			{% blocktrans with username=item.poster.username %}Offered by <strong>{{ username }}</strong> {% endblocktrans %}
+		{% else %}
+			{% blocktrans with username=item.poster.username %}Requested by <strong>{{ username }}</strong> {% endblocktrans %}
+		{% endif %}
+	</p>
+
+	<h1 lang="en" dir="ltr">{{ item.title }}{% if is_expired %} ({% trans 'expired!' %}){% endif %}</h1>
+	<div class="{% if dialogues %}small{% endif %} imgfactwrap">
+  <!--<img src="https://res.cloudinary.com/saywelcome/image/upload/c_fill,h_250,w_250/{% if item.image %}{{ item.image }}{% else %}patj2dla3bnxmrxfzz5a{% endif %}.png">-->
+{% if item.image %}<div><img src="https://res.cloudinary.com/saywelcome/image/upload/c_fill,h_300,w_400/{{ item.image }}.jpg"></div>{% endif %}
+	<div class="facts">
+
+	<ul><li>{% trans 'Category:' %} {% listtrans "cat" item.category %}</li>
+	{% for qo in item.questionoption_set.all %}
+	<li>{% listtrans "catque" qo.answer.categoryquestion %}: {% listtrans "catqueopt" qo.answer %}</li>
+	{% endfor %}
+	</ul>
+
+	<p class="desc" lang="en" dir="ltr"><span class="usersays">{% trans 'Message:' %}</span> {{ item.description }}</p>
+  {% if not item.active_dialogue %}
+  	{% if user.is_authenticated and not request.user.can_start_dialogue and not user.email == item.poster.email %}
+  		<p class="error">{% trans 'Sorry, you reached the maximum number of claims. End another claim if you want to claim this item.' %}</p>
+  	{% else %}
+  		<a href="{% url 'adddialogue' usertype=usertype centreslug=centre.slug itemid=item.id %}" class="button">{% if item.is_offer %}{% trans 'Yes, please' %}{% else %}{% trans 'I can help' %}{% endif %}</a>
+
+  	{% endif %}
+  {% endif %}
+
+	</div>
+</div>
+<!--
+<ul>
+{% if item.is_offer %}
+	<li>Do you think a friend might be interested in this? <a href="">share this</a>!</li>
+{% else %}
+	<li>Do you think a friend might have this? <a href="">share this</a>!</li>
+{% endif %}
+</ul>-->
+
+<!-- start item controls -->
+{% if can_manage %}
+<div class="controls"><h2>{% trans 'Manage this item' %}</h2>
+
+{% if user_is_poster %}
+<p>{% trans 'Expiry date: ' %} <strong>{{ item.expirydate|date:"DATE_FORMAT" }}</strong> <a href="{% url 'extenditem' usertype=usertype centreslug=centre.slug itemid=item.id %}" class="button sec extend" >{% trans 'Extend item' %}</a></p>
+
+	<a href= "{% url 'deleteitem' usertype=usertype centreslug=centre.slug itemid=item.id %}" class="button del">
+		{% trans 'Delete this item' %}
+	</a>
+{% endif %}
+
+	{% if item.active_dialogue %}
+	<a href= "{% url 'deletedialogue' usertype=usertype centreslug=centre.slug dialogueid=item.active_dialogue %}" class="button sec release">{% trans 'End claim' %}</a>
+	{% endif %}
+
+</div>
+{% endif %}
+
+<!-- end item controls -->
+
+<a href="https://docs.google.com/forms/d/1oJ8R58uG96fwkyMJNWKveYB7HJ4f5pLAg2pM6ig5go0/viewform?entry.176123766={{ item.id }}{% if user.is_authenticated %}&entry.849741512={{ user.email }}{% endif %}&entry.1181280888" class="report">{% trans 'Report as inappropriate' %}</a>
+
+</section>
+
+
+{% for dialogue in dialogues %}
+<!-- note that each dialogue has at least one note -->
+<h2>
+	{% blocktrans with the_other_username=dialogue.the_other_username %}Your conversation with {{ the_other_username }}{% endblocktrans %}
+	{% if not dialogue.is_active %}({% trans 'ended!' %}){% endif %}
+</h2>
+<ol class="dialogue">
+	{% for note in dialogue.notes %}
+	<li class="{% if note.from_poster %}fromposter{% endif %}"><p class="dia-name">
+
+{% if note.is_by_this_user %}
+
+{% blocktrans with date=note.creationdate %}<strong>You</strong> wrote on <strong>{{ date }}</strong>{% endblocktrans %}
+
+{% else %}
+
+{% blocktrans with date=note.creationdate the_other_username=dialogue.the_other_username %}<strong>{{ the_other_username }}</strong> wrote on <strong>{{ date }}</strong>{% endblocktrans %}
+
+{% endif %}
+
+	</p>
+		<div class="dia-note">{{ note.description }}</div>
+	</li>
+	{% endfor %}
+
+{% if dialogue.is_active %}
+	<li class="dia-add">
+		<form action="{{ item.url }}" method="post">
+
+		{% csrf_token %}
+		{{ form.non_field_errors }}
+		<fieldset>
+		    <label for="{{ form.description.id_for_label }}">{% trans 'Your message:' %}</label>
+		    {{ form.description }}
+    		{{ form.description.errors }}
+		</fieldset>
+		<input type="submit" value="{% trans 'Add message' %}" class="button" />
+		</form>
+	</li>
+{% endif %}
+</ol>
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endblock content %}
