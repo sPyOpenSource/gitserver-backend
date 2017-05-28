@@ -18,20 +18,31 @@ from django.utils.crypto import get_random_string
 
 from.helpers import send_template_email
 from .models import Category, CategoryQuestionOption, Centre, Dialogue, Item, \
-    Message, Photo, QuestionOption, ResetPasswordKey
+    Message, Photo, QuestionOption, ResetPasswordKey, MyUser, CategoryQuestion
 from .forms import AddItemForm, AddDialogueForm, AddMessageForm, LoginForm, NewPasswordForm, \
     ResetPasswordForm
-from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from supdem.serializers import UserSerializer
+from supdem.serializers import MyUserSerializer, ItemSerializer, CategorySerializer, CategoryQuestionSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+class CategoryQuestionViewSet(viewsets.ModelViewSet):
+    queryset = CategoryQuestion.objects.all()
+    serializer_class = CategorySerializer
+
+class ItemViewSet(viewsets.ModelViewSet):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
+
+class MyUserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+    queryset = MyUser.objects.all()
+    serializer_class = MyUserSerializer
 
 def index(request, centreslug=None, usertype=None):
     redirect_needed = 0

@@ -2,8 +2,81 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 from django.core.urlresolvers import reverse
-from django.contrib.auth.models import User, Group
 
+class MyUserManager(BaseUserManager):
+    def create_user(self, email, date_of_birth, password=None):
+        """
+        Creates and saves a User with the given email, date of
+        birth and password.
+        """
+        if not email:
+            raise ValueError('Users must have an email address')
+
+        user = self.model(
+            email=self.normalize_email(email),
+            date_of_birth=date_of_birth,
+        )
+
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, date_of_birth, password):
+        """
+        Creates and saves a superuser with the given email, date of
+        birth and password.
+        """
+        user = self.create_user(
+            email,
+            password=password,
+            date_of_birth=date_of_birth,
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
+
+class MyUser(AbstractBaseUser):
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
+    date_of_birth = models.DateField()
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+
+    objects = MyUserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['date_of_birth']
+
+    def get_full_name(self):
+        # The user is identified by their email address
+        return self.email
+
+    def get_short_name(self):
+        # The user is identified by their email address
+        return self.email
+
+    def __str__(self):              # __unicode__ on Python 2
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        "Does the user have a specific permission?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    @property
+    def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
 
 ################################
 # Our own classes follow below #
@@ -100,7 +173,7 @@ class CategoryQuestionOption(models.Model):
 
 # Does this table need a languagecode column as well?
 class Item(models.Model):
-    poster = models.ForeignKey(User)
+    poster = models.ForeignKey(MyUser)
     # centre is not a redundant field (yet) as the poster does not have a centre
     centre = models.ForeignKey(Centre)
     # is_offer is not a redundant field (yet) as the poster does not have a usertype
@@ -145,7 +218,7 @@ class Photo(models.Model):
 class Dialogue(models.Model):
     creationdate = models.DateTimeField(auto_now_add=True)
     item = models.ForeignKey(Item)
-    reactor = models.ForeignKey(User)
+    reactor = models.ForeignKey(MyUser)
     # last_change is a redundant field as it can be retrieved from max(Message.creationdate)
     last_change = models.DateTimeField()
 
@@ -165,14 +238,14 @@ class Message(models.Model):
 
 
 class ResetPasswordKey(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(MyUser)
     key = models.CharField(max_length=200, unique=True)
     expirydate = models.DateTimeField()
 
 
 class EmailLog(models.Model):
     creationdate = models.DateTimeField(auto_now_add=True)
-    to_user = models.ForeignKey(User)
+    to_user = models.ForeignKey(MyUser)
     email_name = models.CharField(max_length=50)
     status = models.PositiveSmallIntegerField()
 

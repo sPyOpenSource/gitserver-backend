@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'rest_framework',
     'rest_framework.authtoken',
     # Internal apps
-    'board',
     'supdem',
 )
 
@@ -102,6 +101,8 @@ LANGUAGE_CODE = 'nl'
 
 MAX_ITEMS_IN_LIST=10
 
+ITEM_LIFETIME_IN_DAYS=30
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -110,6 +111,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'supdem.MyUser'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
