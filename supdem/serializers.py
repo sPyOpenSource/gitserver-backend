@@ -10,14 +10,9 @@ class MyUserSerializer(serializers.HyperlinkedModelSerializer):
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Category
-        fields = ('id', 'name_en')
-
-class CategoryQuestionSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = CategoryQuestion
-        fields = ('id', 'name_en')
+        fields = ('id', 'name')
 
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
-        fields = ('id', 'poster', 'centre', 'is_offer', 'active_dialogue', 'creationdate')
+        fields = ('id', 'poster', 'is_offer', 'active_dialogue', 'creationdate', 'expirydate', 'category', 'title', 'description', 'image')

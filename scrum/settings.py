@@ -15,7 +15,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-LANGUAGES = [('nl', 'Nederlands')]
+LANGUAGES = [('nl', 'Nederlands'), ('en', 'English')]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -119,6 +119,5 @@ AUTH_USER_MODEL = 'supdem.MyUser'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    '/home/spy/Python/refugive/klikmodel/'
-    #'/home/spy/JavaScript/refugive/',
+     os.path.join(BASE_DIR, "static"),
 ]

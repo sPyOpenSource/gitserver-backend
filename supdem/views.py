@@ -22,15 +22,11 @@ from .models import Category, CategoryQuestionOption, Centre, Dialogue, Item, \
 from .forms import AddItemForm, AddDialogueForm, AddMessageForm, LoginForm, NewPasswordForm, \
     ResetPasswordForm
 from rest_framework import viewsets
-from supdem.serializers import MyUserSerializer, ItemSerializer, CategorySerializer, CategoryQuestionSerializer
+from supdem.serializers import MyUserSerializer, ItemSerializer, CategorySerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
-    serializer_class = CategorySerializer
-
-class CategoryQuestionViewSet(viewsets.ModelViewSet):
-    queryset = CategoryQuestion.objects.all()
     serializer_class = CategorySerializer
 
 class ItemViewSet(viewsets.ModelViewSet):

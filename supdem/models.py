@@ -146,10 +146,10 @@ class Centre(models.Model):
 
 
 class Category(models.Model):
-    name_en = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-            return self.name_en
+            return self.name
 
 
 # for now, specific category questions can only be enums. The options can be
@@ -175,7 +175,7 @@ class CategoryQuestionOption(models.Model):
 class Item(models.Model):
     poster = models.ForeignKey(MyUser)
     # centre is not a redundant field (yet) as the poster does not have a centre
-    centre = models.ForeignKey(Centre)
+    #centre = models.ForeignKey(Centre)
     # is_offer is not a redundant field (yet) as the poster does not have a usertype
     is_offer = models.BooleanField()
     active_dialogue = models.PositiveIntegerField(default=0, unique=False)
@@ -191,13 +191,13 @@ class Item(models.Model):
     def __str__(self):
         return self.title
 
-    def for_usertype(self):
+    '''def for_usertype(self):
         return 'refugee' if self.is_offer else 'local'
 
     def url(self):
         return reverse('item', kwargs={
             'centreslug': self.centre.slug, 'usertype': self.for_usertype(), 'itemid': self.id
-        })
+        })'''
 
 
 # the specific answer given to a category specific question
