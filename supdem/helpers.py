@@ -3,7 +3,6 @@ from django.core.exceptions import ImproperlyConfigured
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils import translation
-
 from .models import EmailLog
 
 
@@ -12,7 +11,7 @@ from .models import EmailLog
 # https://docs.djangoproject.com/en/1.8/ref/utils/#django.utils.translation.deactivate at the
 # end to switch the locale for creating the  email. See also
 # http://stackoverflow.com/questions/5258715/django-switching-for-a-block-of-code-switch-the-language-so-translations-are-d
-def send_template_email(to_user, email_name, context={}):
+def send_template_email(to_user, email_name, context={}, from_user=None):
     """" Send the email message with name email_name to to_user.
 
     The first line of the template should be "-- subject --", the second line should be the subject
@@ -24,11 +23,11 @@ def send_template_email(to_user, email_name, context={}):
     # if the tag ends with url, prepend it with the domain and remove the languagecode
     for name, value in context.items():
         if name[-3:] == 'url':
-            context[name] = settings.DOMAIN_FOR_EMAILS + "/" + to_user.languagecode + value[3:]
+            context[name] = settings.DOMAIN_FOR_EMAILS + value[3:]
 
     # get the translated email
     cur_language = translation.get_language()
-    translation.activate(to_user.languagecode)
+    #translation.activate(to_user.languagecode)
     rendered_template = render_to_string('supdem/email/' + email_name +
                                          '.txt', context).split('\n')
     translation.activate(cur_language)
@@ -39,12 +38,21 @@ def send_template_email(to_user, email_name, context={}):
         raise ImproperlyConfigured("expect first line to be a subject indicator")
     if rendered_template[2] != "-- body txt --":
         raise ImproperlyConfigured("expect third line to be a body txt indicator")
-    status = send_mail(
-        rendered_template[1],
-        '\n'.join(rendered_template[3:]),
-        settings.DEFAULT_FROM_EMAIL,
-        [to_user.username + ' <' + to_user.email + '>']
-    )
+    if from_user:
+        status = send_mail(
+            'New message received from Refugive.com',
+            context['message'],
+            from_user.username+' <'+from_user.email + '>',
+            [to_user.username + ' <' + to_user.email + '>']
+        )
+    else:
+        status = send_mail(
+            rendered_template[1],
+            '\n'.join(rendered_template[3:]),
+            settings.DEFAULT_FROM_EMAIL,
+            [to_user.username + ' <' + to_user.email + '>']
+        )
+
     EmailLog(
         email_name=email_name,
         to_user=to_user,

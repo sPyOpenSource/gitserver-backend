@@ -4,6 +4,7 @@ from . import views
 
 
 router = DefaultRouter(trailing_slash=False)
-router.register(r'category', views.CategoryViewSet)
+router.register(r'categories', views.CategoryViewSet)
 router.register(r'users', views.MyUserViewSet)
-router.register(r'item', views.ItemViewSet)
+router.register(r'items', views.ItemViewSet)
+router.register(r'groups', views.GroupViewSet)

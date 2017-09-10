@@ -1,68 +1,25 @@
-{% extends "supdem/base.html" %}{% load i18n %}{% load supdem_extras %}{% load staticfiles %}
-
-{% block title %}{% trans 'Choose a centre' %} –{% endblock title %}
-{% block bodyclass %}home{% endblock bodyclass %}
-{% block metadesc %}{% trans 'Choose a centre' %} –{% endblock metadesc %}
+{% extends "supdem/base.html" %}
 {% block content %}
-<div class="main home">
-  <div class="intro"><div class="wrap">
-<p>{% trans 'A refugee may need something. A local might have a spare item. Use this website to get in touch.' %}</p></div></div>
-<div class="wrap">
-{% if centre %}
-<div class="container">
-		<div class="iam"><h2><a href="{% url 'list' usertype='refugee' centreslug=centre.slug %}">
-      {% trans 'I am a refugee.' %}</a></h2></div>
-	<div class="iam"><h2><a href="{% url 'list' usertype='local' centreslug=centre.slug %}">
-    {% trans 'I am a local.' %}</a></h2></div>
+<button disabled>Add An Item</button>
+{% for item in items %}
+<hr>
+<div class="items">
+  <div>
+      <h3 dir="ltr">{{item.title}}</h3>
+      {% if item.image != '' %}
+        <div class="imgwrap">
+          <img src="https://res.cloudinary.com/dvrrqjzay/image/upload/c_fill,h_300,w_400/{{item.image}}.jpg">
+        </div>
+      {% endif %}
+      <div class="factwrap">
+        <div class="factoids">
+          <div>
+            Offered by <strong>{{item.owner.username}}</strong>
+            in <strong>{{item.category.name}}</strong>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
-{% else %}
-<div class="container">
-{% if usertype != "local" %}
-<div class="iam">
-<h2>{% trans 'I am a refugee.' %}</h2> <p>{% trans 'This is my centre:' %}</p>
-
-<ul class="places">
-	{% for c in centres %}{% if c.numitems_total > 0 %}
-	<li><a href="{% url 'list' usertype='refugee' centreslug=c.slug %}">{{ c.name }}
-		({% blocktrans count counter=c.numitems_fromlocals %}1 item{% plural %}{{ counter }} items{% endblocktrans %})</a>
-  <span>({{ c.address}}, {{ c.city }})</span></li>{% endif %}
-	{% endfor %}
-</ul>
-<h2 class="moreclick" id="more-1">{% trans 'More' %}</h2>
-<ul class="places more" id="list-more-1">
-	{% for c in centres %}{% if c.numitems_total == 0 %}
-	<li><a href="{% url 'list' usertype='refugee' centreslug=c.slug %}">{{ c.name }}
-		({% blocktrans count counter=c.numitems_fromlocals %}1 item{% plural %}{{ counter }} items{% endblocktrans %})</a>
-  <span>({{ c.address}}, {{ c.city }})</span></li>{% endif %}
-	{% endfor %}
-</ul>
-</div>
-{% endif %}
-
-{% if usertype != "refugee" %}
-<div class="iam">
-<h2>{% trans 'I am a local.' %}</h2> <p>{% trans 'I am living near this centre:' %}</p>
-<ul class="places">
-	{% for c in centres %}{% if c.numitems_total > 0 %}
-	<li><a href="{% url 'list' usertype='local' centreslug=c.slug %}">{{ c.name }}
-		({% blocktrans count counter=c.numitems_fromrefugees %}1 item{% plural %}{{ counter }} items{% endblocktrans %})</a>
-  <span>({{ c.address}}, {{ c.city }})</span></li>{% endif %}
-	{% endfor %}
-</ul>
-<h2 class="moreclick" id="more-2">{% trans 'More' %}</h2>
-<ul class="places more" id="list-more-2">
-	{% for c in centres %}{% if c.numitems_total == 0 %}
-	<li><a href="{% url 'list' usertype='local' centreslug=c.slug %}">{{ c.name }}
-		({% blocktrans count counter=c.numitems_fromrefugees %}one item{% plural %}{{ counter }} items{% endblocktrans %})</a>
-  <span>({{ c.address}}, {{ c.city }})</span></li>{% endif %}
-	{% endfor %}
-</ul>
-</div>
-{% endif %}
-</div><!-- container -->
-<p>{% blocktrans with beginlink='<a href="http://goo.gl/forms/eWiV7U1NkC">' endlink="</a>" %}{{ beginlink }}Add a suggestion{{ endlink }} for a centre that we can add to this list.{% endblocktrans %}</p>
-
-{% endif %}</div>
-
-</div>
+{% endfor %}
 {% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "supdem/base.html" %}{% load i18n %}{% load supdem_extras %}{% load staticfiles %}
+
+{% block content %}
+<form action="/nl/adduser" method="post">
+  {% csrf_token %}
+  <label for="id_email">E-mail:</label>
+  <input id="id_email" type="text" name="email" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required />
+  <label for="id_username">Username:</label>
+  <input id="id_username" name="username" maxlength="50" required type="text"/>
+  <label for="id_password">Password:</label>
+  <input type="password" id="id_password" name="password"/ required/>
+  {% if groups %}
+    <label for="id_group">Group: </label>
+    <select id='id_group' name='group_id' required>
+      <option value=""></option>
+      {% for group in groups %}
+        <option value="{{group.id}}">{{group.name}}</option>
+      {% endfor %}
+    </select>
+  {% endif %}
+  <br/>
+  <a href="/" class="btn">Cancel</a>
+  <input type="submit" class="btn btn-dafault" value="Submit"/>
+</form>
+{% endblock content %}

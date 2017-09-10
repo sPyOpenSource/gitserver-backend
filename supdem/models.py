@@ -2,9 +2,11 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import Group
+
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, date_of_birth, password=None):
+    def create_user(self, email, username, group_id, password=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
@@ -14,22 +16,24 @@ class MyUserManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
-            date_of_birth=date_of_birth,
+            username=username,
+            group_id=group_id
         )
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, date_of_birth, password):
+    def create_superuser(self, email, password):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
         user = self.create_user(
             email,
+            username='admin',
             password=password,
-            date_of_birth=date_of_birth,
+            group_id=1
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -42,14 +46,13 @@ class MyUser(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
-    date_of_birth = models.DateField()
+    username = models.CharField(max_length=20)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-
+    group = models.ForeignKey(Group)
     objects = MyUserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['date_of_birth']
 
     def get_full_name(self):
         # The user is identified by their email address
@@ -152,38 +155,20 @@ class Category(models.Model):
             return self.name
 
 
-# for now, specific category questions can only be enums. The options can be
-# found in CategoryQuestionOption
-class CategoryQuestion(models.Model):
-    name_en = models.CharField(max_length=100)
-    category = models.ForeignKey(Category)
-
-    def __str__(self):
-            return self.name_en
-
-
-class CategoryQuestionOption(models.Model):
-    name_en = models.CharField(max_length=100)
-    order = models.PositiveSmallIntegerField()
-    categoryquestion = models.ForeignKey(CategoryQuestion)
-
-    def __str__(self):
-            return self.name_en
-
-
 # Does this table need a languagecode column as well?
 class Item(models.Model):
-    poster = models.ForeignKey(MyUser)
+    #poster = models.ForeignKey(MyUser)
     # centre is not a redundant field (yet) as the poster does not have a centre
     #centre = models.ForeignKey(Centre)
     # is_offer is not a redundant field (yet) as the poster does not have a usertype
-    is_offer = models.BooleanField()
-    active_dialogue = models.PositiveIntegerField(default=0, unique=False)
+    #is_offer = models.BooleanField()
+    #active_dialogue = models.PositiveIntegerField(default=0, unique=False)
     creationdate = models.DateTimeField(auto_now_add=True)
     expirydate = models.DateTimeField()
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=200)
     description = models.TextField()
+    owner = models.ForeignKey(MyUser)
     # image is semi-redundant. A photo id would have made more sense, but this
     # solution is much more efficient for showing lists of images
     image = models.CharField(max_length=200, default="")
@@ -200,41 +185,11 @@ class Item(models.Model):
         })'''
 
 
-# the specific answer given to a category specific question
-class QuestionOption(models.Model):
-    item = models.ForeignKey(Item)
-    answer = models.ForeignKey(CategoryQuestionOption)
-
-
-# Do we need to store an order of the photos or a primary photo?
-class Photo(models.Model):
-    item = models.ForeignKey(Item)
-    image = models.CharField(max_length=200)
-
-
-# A dialog between the item poster and a single reactor
-# The last_change column is used for ordering multiple dialoges in a dialogue
-# list. Each dialogue can have one or more messages.
-class Dialogue(models.Model):
-    creationdate = models.DateTimeField(auto_now_add=True)
-    item = models.ForeignKey(Item)
-    reactor = models.ForeignKey(MyUser)
-    # last_change is a redundant field as it can be retrieved from max(Message.creationdate)
-    last_change = models.DateTimeField()
-
-    def end_dialogue(self):
-        item = self.item
-        item.active_dialogue = 0
-        item.save()
-        return 1
-
-
 class Message(models.Model):
     creationdate = models.DateTimeField(auto_now_add=True)
-    dialogue = models.ForeignKey(Dialogue)
-    from_poster = models.BooleanField()
-    description = models.TextField()
-    languagecode = models.CharField(max_length=2)
+    item = models.ForeignKey(Item)
+    text = models.TextField()
+    owner = models.ForeignKey(MyUser)
 
 
 class ResetPasswordKey(models.Model):
