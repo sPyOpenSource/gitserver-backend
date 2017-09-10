@@ -31,7 +31,6 @@ INSTALLED_APPS = (
     'django_filters',
     # Internal apps
     'supdem',
-    'doj',
 )
 
 MIDDLEWARE_CLASSES = (
