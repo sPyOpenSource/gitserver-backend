@@ -1,2 +1,2 @@
 *.py[co]
-*.sqlite3
+db.sqlite3
