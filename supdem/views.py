@@ -68,7 +68,10 @@ class MessageList(APIView):
                 send_template_email(
                     message.item.owner,
                     'message_received',
-                    {'message': message.text},
+                    {
+                        'message': message.text,
+                        'title': message.item.title
+                    },
                     message.owner
                 )
             return Response(serializer_class.data, status=status.HTTP_201_CREATED)
@@ -198,7 +201,8 @@ def adduser(request):
     if request.method == 'POST':
         form = AddUserForm(request.POST, request=request)
         if form.is_valid():
-            # send_template_email(user, 'account_created')
             messages.success(request, _('User was successfully added'))
+            user = form.cleaned_data['user']
+            send_template_email(user, 'account_created')
             return redirect('/static/index.html')
     return render(request, 'supdem/adduser.html', {'groups': groups})

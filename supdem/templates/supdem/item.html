@@ -34,7 +34,6 @@
   		<p class="error">{% trans 'Sorry, you reached the maximum number of claims. End another claim if you want to claim this item.' %}</p>
   	{% else %}
   		<a href="{% url 'adddialogue' usertype=usertype centreslug=centre.slug itemid=item.id %}" class="button">{% if item.is_offer %}{% trans 'Yes, please' %}{% else %}{% trans 'I can help' %}{% endif %}</a>
-
   	{% endif %}
   {% endif %}
 

@@ -20,12 +20,10 @@ urlpatterns += i18n_patterns(
     url(r'^$', views.index, name='index'),
     url(r'^adduser$', views.adduser, name='adduser'),
     url(r'^image$', views.image, name='image'),
-    url(r'^(?P<usertype>local|refugee)/$', views.index, name='index'),
     url(r'^about/$', TemplateView.as_view(template_name='supdem/about.html'), name='about'),
-    url(r'^how_it_works/$', TemplateView.as_view(template_name='supdem/how_it_works.html'),
-        name='how_it_works'),
+    url(r'^help/$', TemplateView.as_view(template_name='supdem/help.html'),
+        name='help'),
     url(r'^resetpassword/$', views.resetpassword, name='resetpassword'),
     url(r'^newpassword/$', views.newpassword, name='newpassword'),
     # must be low in the list otherwise it east the /login/ and /logout/ requests
-    url(r'^(?P<centreslug>[a-z_]{5,})/$', views.index, name='index'),
 )

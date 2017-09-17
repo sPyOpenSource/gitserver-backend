@@ -40,7 +40,7 @@ def send_template_email(to_user, email_name, context={}, from_user=None):
         raise ImproperlyConfigured("expect third line to be a body txt indicator")
     if from_user:
         status = send_mail(
-            'New message received from Refugive.com',
+            context['title'],
             context['message'],
             from_user.username+' <'+from_user.email + '>',
             [to_user.username + ' <' + to_user.email + '>']

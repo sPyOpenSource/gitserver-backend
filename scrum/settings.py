@@ -90,7 +90,7 @@ LANGUAGE_CODE = 'nl'
 
 MAX_ITEMS_IN_LIST=10
 
-ITEM_LIFETIME_IN_DAYS=30
+ITEM_LIFETIME_IN_DAYS=60
 
 TIME_ZONE = 'UTC'
 
@@ -108,6 +108,10 @@ AUTH_USER_MODEL = 'supdem.MyUser'
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/'
 MEDIA_ROOT = '/static/media/'
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 STATICFILES_DIRS = [
      os.path.join(BASE_DIR, "static"),
@@ -152,4 +156,4 @@ PASSWORD_RESET_PERIOD_IN_HOURS = 48
 #DOMAIN_FOR_EMAILS = "http://refugive.com"
 DOMAIN_FOR_EMAILS = "https://s55969da3.adsl.online.nl"
 #DEFAULT_FROM_EMAIL = 'Maaike and Jasper from refugive <noreply@refugive.com>'
-DEFAULT_FROM_EMAIL = 'Xuyi from refugive <noreply@s55969da3.adsl.online.nl>'
+DEFAULT_FROM_EMAIL = 'Refugive.com <noreply@s55969da3.adsl.online.nl>'

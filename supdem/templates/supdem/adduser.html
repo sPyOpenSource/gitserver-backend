@@ -5,21 +5,21 @@
   {% csrf_token %}
   <label for="id_email">E-mail:</label>
   <input id="id_email" type="text" name="email" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required />
-  <label for="id_username">Username:</label>
+  <label for="id_username">{% trans 'Username' %}:</label>
   <input id="id_username" name="username" maxlength="50" required type="text"/>
-  <label for="id_password">Password:</label>
+  <label for="id_password">{% trans 'Password' %}:</label>
   <input type="password" id="id_password" name="password"/ required/>
   {% if groups %}
-    <label for="id_group">Group: </label>
+    <label for="id_group">{% trans 'Group' %}: </label>
     <select id='id_group' name='group_id' required>
       <option value=""></option>
       {% for group in groups %}
-        <option value="{{group.id}}">{{group.name}}</option>
+        <option value="{{group.id}}">{% trans group.name %}</option>
       {% endfor %}
     </select>
   {% endif %}
   <br/>
-  <a href="/" class="btn">Cancel</a>
-  <input type="submit" class="btn btn-dafault" value="Submit"/>
+  <a href="/" class="btn">{% trans 'Cancel' %}</a>
+  <input type="submit" class="btn btn-dafault" value="{% trans 'Submit' %}"/>
 </form>
 {% endblock content %}

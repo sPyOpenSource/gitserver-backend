@@ -1,6 +1,7 @@
 {% extends "supdem/base.html" %}
+{% load i18n %}
 {% block content %}
-<button disabled>Add An Item</button>
+<button disabled class="btn btn-default">{% trans 'Add An Item' %}</button>
 {% for item in items %}
 <hr>
 <div class="items">
@@ -14,8 +15,7 @@
       <div class="factwrap">
         <div class="factoids">
           <div>
-            Offered by <strong>{{item.owner.username}}</strong>
-            in <strong>{{item.category.name}}</strong>
+            {% trans 'Category' %} <strong>{% trans item.category.name %}</strong>
           </div>
         </div>
       </div>

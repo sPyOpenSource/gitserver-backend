@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-09 21:03+0100\n"
+"POT-Creation-Date: 2017-09-16 17:18+0200\n"
 "PO-Revision-Date: 2015-12-19 13:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,47 +19,45 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Poedit 1.8.6\n"
 
-#: supdem/forms.py:34
+#: supdem/forms.py:43
 msgid "You waited too long with filling out the form"
 msgstr "لقد انتظرت وقتا طويلا  لملء الاستمارة"
 
-#: supdem/forms.py:36
+#: supdem/forms.py:45
 msgid "please enable cookies"
 msgstr "قم بتمكين ملفات تعريف الارتباط."
 
-#: supdem/forms.py:49
+#: supdem/forms.py:58 supdem/forms.py:99
 msgid "Email address already in use"
 msgstr "عنوان البريد الإلكتروني قيد الاستخدام بالفعل"
 
-#: supdem/forms.py:51
+#: supdem/forms.py:60
 msgid "Username required for creating a new user"
 msgstr "اسم المستخدم المطلوب لإنشاء مستخدم جديد"
 
-#: supdem/forms.py:53
+#: supdem/forms.py:62 supdem/forms.py:101
 msgid "Password required for creating a new user"
 msgstr "كلمة المرور المطلوبة لإنشاء مستخدم جديد"
 
-#: supdem/forms.py:70
+#: supdem/forms.py:79
 msgid "The username and password were incorrect."
 msgstr "اسم المستخدم وكلمة المرور غير صحيحة."
 
-#: supdem/forms.py:88 supdem/forms.py:92
-msgid "Not all questions answered"
-msgstr "ليست كل الاسئلة مجابة"
-
-#: supdem/forms.py:103
+#: supdem/forms.py:119
 msgid "Maximum number of claims reached"
 msgstr "بلغ الحد الأقصى لعدد الطلبات."
 
-#: supdem/templates/supdem/about.html:2 supdem/templates/supdem/base.html:122
+#: supdem/templates/supdem/about.html:2 supdem/templates/supdem/base.html:55
 msgid "About us"
 msgstr "معلومات عنا"
 
-#: supdem/templates/supdem/about.html:8
-msgid "Refugive.com: a marketplace for refugees and neighbours"
+#: supdem/templates/supdem/about.html:9
+#, fuzzy
+#| msgid "Refugive.com: a marketplace for refugees and neighbours"
+msgid "a marketplace for refugees and neighbours"
 msgstr "Refugive.com:  سوق للاجئين و السكان المحليين"
 
-#: supdem/templates/supdem/about.html:14
+#: supdem/templates/supdem/about.html:17
 msgid ""
 "A new website for and by the neighbourhood: Refugive.com, a free marketplace "
 "for both refugees and neighbours. Our site wants to match the wishes of "
@@ -72,7 +70,7 @@ msgstr ""
 "استعداد لمشاركتهم. ملابس للأطفال والكبار بالطبع، ولكن أيضا الكتب والألعاب "
 "والاتصالات الاجتماعية. ماذا عن طبخ وجبة معا، أو ممارسة الرياضة؟"
 
-#: supdem/templates/supdem/about.html:16
+#: supdem/templates/supdem/about.html:19
 msgid ""
 "Are you in need of something - or: do you have clothes, things or time to "
 "spare? Have a look around on Refugive.com and meet your new neighbours! If "
@@ -88,7 +86,7 @@ msgstr ""
 "المحليين أيضا، ولكن ينبغي أن تكون العروض على بعد مسافة قصيرة سيرا على "
 "الأقدام من مركز اللاجئين. ويجب أن لا يطلب مال بالمقابل."
 
-#: supdem/templates/supdem/about.html:18
+#: supdem/templates/supdem/about.html:21
 msgid ""
 "Refugive was started by a group of people in Bezuidenhout, The Hague wanting "
 "to help refugees in their neighbourhood. Refugive.com is a non profit "
@@ -97,7 +95,7 @@ msgstr ""
 "بدأ Refugive من قبل مجموعة من الناس في Bezuidenhout، لاهاي ترغب في مساعدة "
 "اللاجئين في حيهم. Refugive.com هو ليس موقع تجاري و غير ربحي."
 
-#: supdem/templates/supdem/about.html:20
+#: supdem/templates/supdem/about.html:23
 msgid "Best regards,<br>Jasper, Jeroen, Krista, Maaike and Tijs"
 msgstr ",مع اطيب التحيات<br>Jasper, Jeroen, Krista, Maaike and Tijs"
 
@@ -110,7 +108,7 @@ msgid "Please write your message in English, if you can."
 msgstr "الرجاء كتابة رسالتك باللغة الإنجليزية، إذا كنت تستطيع."
 
 #: supdem/templates/supdem/adddialogue.html:18
-#: supdem/templates/supdem/item.html:110
+#: supdem/templates/supdem/item.html:109
 msgid "Your message:"
 msgstr "الرسائل الخاص بك"
 
@@ -158,8 +156,7 @@ msgstr "ما الذي تبحث عنه ؟"
 msgid "Please write your posting in English, if you can."
 msgstr "يرجى كتابة المنشور الخاص بك باللغة الإنجليزية، إذا كان ذلك ممكنا."
 
-#: supdem/templates/supdem/additem.html:15
-#: supdem/templates/supdem/item.html:25
+#: supdem/templates/supdem/additem.html:15 supdem/templates/supdem/item.html:25
 msgid "Category:"
 msgstr "النوع:"
 
@@ -195,112 +192,42 @@ msgstr "كلمة المرور الخاصة بك"
 msgid "Submit posting"
 msgstr " انشاء اعلان"
 
-#: supdem/templates/supdem/base.html:15 supdem/templates/supdem/base.html:17
-#: supdem/templates/supdem/index.html:9
+#: supdem/templates/supdem/base.html:16 supdem/templates/supdem/base.html:18
 msgid ""
 "A refugee may need something. A local might have a spare item. Use this "
 "website to get in touch."
 msgstr ""
 "قد يحتاج لاجئ الى شيء, مواطن لديه اشياء لا يحتاجها, استخدم هذا الموقع للتواصل"
 
-#: supdem/templates/supdem/base.html:46
-msgid "Switch language"
-msgstr "تبديل اللغة"
-
-#: supdem/templates/supdem/base.html:59 supdem/templates/supdem/base.html:61
-#: supdem/templates/supdem/base.html:63
+#: supdem/templates/supdem/base.html:41
 msgid "Home"
 msgstr "الصفحة الرئيسية"
 
-#: supdem/templates/supdem/base.html:77 supdem/templates/supdem/base.html:79
-#: supdem/templates/supdem/mypage.html:7
-msgid "Your items"
-msgstr "المنشورات الخاصة بك"
-
-#: supdem/templates/supdem/base.html:81
-msgid "Log out"
-msgstr "تسجيل الخروج"
-
-#: supdem/templates/supdem/base.html:85 supdem/templates/supdem/base.html:144
-#: supdem/templates/supdem/base.html:150
-msgid "Log in"
-msgstr "تسجيل الدخول"
-
-#: supdem/templates/supdem/base.html:89
-#, fuzzy
-#| msgid "I am a refugee."
-msgid "I am a refugee"
-msgstr "انا لاجئ."
-
-#: supdem/templates/supdem/base.html:90
-#, fuzzy
-#| msgid "I am a local."
-msgid "I am a local"
-msgstr "انا ساكن محلي"
-
-#: supdem/templates/supdem/base.html:92
-msgid "change"
-msgstr "تغيير"
-
-#: supdem/templates/supdem/base.html:93
-msgid "home"
+#: supdem/templates/supdem/base.html:42
+msgid "Help"
 msgstr ""
 
-#: supdem/templates/supdem/base.html:122
-msgid "What is Refugive and how does it work?"
+#: supdem/templates/supdem/base.html:43
+msgid "Login"
+msgstr ""
+
+#: supdem/templates/supdem/base.html:44
+msgid "Register"
+msgstr ""
+
+#: supdem/templates/supdem/base.html:55
+#, fuzzy
+#| msgid "What is Refugive and how does it work?"
+msgid "What is Refugive.com and how does it work?"
 msgstr "ما هو  Refugive وكيف يعمل؟"
 
-#: supdem/templates/supdem/base.html:131
-#, python-format
-msgid ""
-"Not living in or near %(centre)s? Choose <a href=\"%(navigation_url)s?"
-"ignoreses=1\">another centre</a>"
-msgstr ""
-"لا اعيش بالقرب من %(centre)s? أختر<a href=\"%(navigation_url)s?"
-"ignoreses=1\">مركز اخر</a>"
-
-#: supdem/templates/supdem/base.html:133
-msgid "Are you not a refugee?"
-msgstr "انت لست لاجئ؟"
-
-#: supdem/templates/supdem/base.html:133
-msgid "Refugive for locals"
-msgstr " Refugive للسكان المحليين"
-
-#: supdem/templates/supdem/base.html:134
-msgid "Are you a refugee?"
-msgstr "هل أنت لاجئ؟"
-
-#: supdem/templates/supdem/base.html:134
-msgid "Refugive for refugees"
-msgstr "Refugive للاجئين"
-
-#: supdem/templates/supdem/base.html:139
+#: supdem/templates/supdem/base.html:57
 #, python-format
 msgid ""
 "Tips, suggestions, complaints or questions? Please %(beginlink)sgive us "
 "feedback%(endlink)s"
 msgstr ""
 "نصائح ,اقتراحات ,شكاوى أو أسئلة؟ الرجاء  %(beginlink)s اعطنا رايك %(endlink)s"
-
-#: supdem/templates/supdem/base.html:147
-msgid "email"
-msgstr "بريد إلكتروني"
-
-#: supdem/templates/supdem/base.html:148
-msgid "password"
-msgstr "كلمة المرور"
-
-#: supdem/templates/supdem/base.html:151
-msgid "I lost my password"
-msgstr "لقد فقدت كلمة المرور الخاصة بي"
-
-#: supdem/templates/supdem/base.html:154
-msgid ""
-"Your account will automatically be created the first time you post something "
-"or react to a post."
-msgstr ""
-"سيتم تلقائيا إنشاء حسابك في المرة الأولى التي تنشر فيها شيئا أو ترد على منشور"
 
 #: supdem/templates/supdem/email/account_created.txt:3
 msgid "Welcome to Refugive.com!"
@@ -397,11 +324,11 @@ msgid ""
 "%(url)s to enter a new password."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:12
+#: supdem/templates/supdem/help.html:10
 msgid "What is this?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:13
+#: supdem/templates/supdem/help.html:11
 msgid ""
 "We want to help the refugees in our neighbourhood. As a refugee, you can "
 "post your needs and wishes on this website, and locals can reply. Locals can "
@@ -409,85 +336,67 @@ msgid ""
 "Or: an invitation to dinner or a fun activity."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:15
+#: supdem/templates/supdem/help.html:13
 msgid "How does it work?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:16
+#: supdem/templates/supdem/help.html:14
 msgid ""
-"For refugees: find the centre you're staying at. (Is the centre not listed? "
-"Let us know!) If you like any of the postings that are being offered, click "
-"the button that says 'Yes, please' and claim it. The author can then contact "
-"you about the next steps. Do you need anything else? Add a posting yourself "
-"and wait for a local to get back to you."
+"For refugees: find the centre you're staying at. If you like any of the "
+"postings that are being offered, click the button that says 'Yes, please' "
+"and claim it. The author can then contact you about the next steps. Do you "
+"need anything else? Add a posting yourself and wait for a local to get back "
+"to you."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:17
+#: supdem/templates/supdem/help.html:15
 msgid ""
-"For locals: find the centre in your area. (Is it not listed? Let us know!) "
-"Then, either reply to a posting by a refugee who is requesting something, or "
-"create a posting yourself with something you can spare."
+"For locals: find the centre in your area. Then, either reply to a posting by "
+"a refugee who is requesting something, or create a posting yourself with "
+"something you can spare."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:18
+#: supdem/templates/supdem/help.html:16
 msgid ""
-"Whenever somebody replies to your posting, you will get an email message "
-"from us and your posting is hidden for other users. Further arrangements can "
-"be made by exchanging messages through the website: picking a date and a "
-"place to meet etc. These messages are not visible to others. Make sure to "
-"meet at a place at walking distance from the centre."
+"Whenever somebody replies to your post, you will get an email notification. "
+"Further arrangements can be made by exchanging messages through the website: "
+"pick a date, a place to meet etc. Make sure to meet at a place at walking "
+"distance from the centre."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:20
+#: supdem/templates/supdem/help.html:18
 msgid "What are the rules?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:21
+#: supdem/templates/supdem/help.html:19
 msgid ""
 "This site was created only for refugees in 'AZC's' (refugee centres) and the "
-"locals in the area surrounding them. Locals are not allowed to ask for money "
-"when offering things and services. Only refugees can claim offers (no more "
-"than 2 claims at once). Locals cannot ask for goods or services and refugees "
-"cannot offer goods or services. And of course nobody can ask for or offer "
-"anything illegal."
+"locals from the surrounding area. Locals are not allowed to ask for money "
+"when offering things and services. Only refugees can claim offers. Locals "
+"cannot ask for goods or services and refugees cannot offer goods or "
+"services. And of course nobody can ask for or offer anything illegal."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:25
+#: supdem/templates/supdem/help.html:21
 msgid "Frequently asked questions"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:28
-#, fuzzy
-#| msgid "Your email address:"
-msgid "Who will see my email address?"
-msgstr "عنوان بريدك الإلكتروني"
-
-#: supdem/templates/supdem/how_it_works.html:29
-msgid ""
-"We will never show your email address on the website, and we won't share it "
-"with anyone. After submitting a posting, locals and refugees can have "
-"conversations through the website. In this process, email addresses aren't "
-"shared either."
-msgstr ""
-
-#: supdem/templates/supdem/how_it_works.html:31
+#: supdem/templates/supdem/help.html:23
 #, fuzzy
 #| msgid "Your username:"
 msgid "And my username?"
 msgstr "اسم المُستخدم خاصتك:"
 
-#: supdem/templates/supdem/how_it_works.html:32
+#: supdem/templates/supdem/help.html:24
 msgid ""
-"Your username is public. If you add a post, everybody can see your username. "
-"When you reply to somebody else's posting, only the person you are replying "
-"to will see your username."
+"Your username is public. If you add a post, everybody can see your username."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:39
+#: supdem/templates/supdem/help.html:31
 msgid "What should my message contain when I want to react?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:40
+#: supdem/templates/supdem/help.html:32
 msgid ""
 "It is up to you to make contact with the person you are reacting to. So it "
 "might be helpful to discuss when and where it would be convenient for you to "
@@ -495,37 +404,37 @@ msgid ""
 "details to the person you are communicating with."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:43
-msgid "What should my description contain when I want to add a posting?"
+#: supdem/templates/supdem/help.html:35
+msgid "What should my description contain when I want to add a post?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:44
+#: supdem/templates/supdem/help.html:36
 msgid ""
-"The more details you can add, the better. If you are offering something, be "
-"as detailed as possible about the condition of the product or the details of "
-"the service. A picture of a product may say more than a 1000 words. If you "
-"are requesting something, it might help to mention all aspects of the "
-"product or service that are relevant for you."
+"The more details you can add, the better. If you offere something, then "
+"please give as much as detailed possible about the condition of the product "
+"or the details of the service. A picture of a product may say more than a "
+"1000 words. If you request something, then it might helpful to mention all "
+"aspects of the product or service that are relevant for you."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:47
+#: supdem/templates/supdem/help.html:39
 msgid "How will I receive the items?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:48
+#: supdem/templates/supdem/help.html:40
 msgid ""
-"No external party (like the centre, COA, Red Cross, Vluchtelingenwerk, "
-"Refugive) is involved. It is up to you and the person you are contacting to "
-"contact each other and set a meeting place and time. You can use Refugive to "
-"exchanges messages, so you can get to know the person you are contacting "
-"before sharing your contact details."
+"No external parties (e.g. the centre, COA, Red Cross, Vluchtelingenwerk and "
+"Refugive.com) are involved. It is up to you and the person you are "
+"contacting to contact each other and set a meeting place and time. You can "
+"use Refugive to exchanges messages, so you can get to know the person you "
+"are contacting before sharing your contact details."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:50
+#: supdem/templates/supdem/help.html:42
 msgid "I am a bit embarrassed about asking for help. What should I do?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:51
+#: supdem/templates/supdem/help.html:43
 msgid ""
 "The locals who visit this website do that because they want to support "
 "refugees in their neighbourhood and make them feel welcome. For many locals "
@@ -535,87 +444,39 @@ msgid ""
 "telling them what you need."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:54
-msgid ""
-"I have an event where multiple people can join. Like cooking for a group of "
-"people or giving language lessons. What should I do?"
+#: supdem/templates/supdem/help.html:45
+msgid "I reacted to a post, but I didn't hear anything back. What should I do?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:55
-#: supdem/templates/supdem/how_it_works.html:59
-msgid ""
-"Once somebody replied to your posting, nobody else will see it. So you will "
-"not get more reactions. You can do two things to get new reactions. You can "
-"create a new item with the same title and description. Or you can start "
-"communicating outside the Refugive website. Then you can click 'end claim' "
-"so that others can see the posting again."
-msgstr ""
-
-#: supdem/templates/supdem/how_it_works.html:58
-msgid ""
-"I need multiple items for multiple people in my centre. Like mattresses or "
-"educational material for a school in the centre. What should I do?"
-msgstr ""
-
-#: supdem/templates/supdem/how_it_works.html:61
-msgid ""
-"I reacted to a posting, but I didn't hear anything back. What should I do?"
-msgstr ""
-
-#: supdem/templates/supdem/how_it_works.html:62
+#: supdem/templates/supdem/help.html:46
 msgid ""
 "You can send a new message to that person by going to the detail page for "
-"the posting you reacted to. If you still don't hear anything back, you can "
-"choose 'end claim' from the detail page and choose another item to reply to."
+"the post you reacted to. If you still don't hear anything back, you can "
+"reply to another item."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:64
-msgid ""
-"When I tried to react to a posting, I got a message that I reached the "
-"maximum number of reactions. How can I react to something else?"
-msgstr ""
-
-#: supdem/templates/supdem/how_it_works.html:65
-msgid ""
-"You can only react to two postings at a time. If you want to react to "
-"another posting, you will have to end one of the other reactions first. You "
-"can do that by first going to an item you replied to and then clicking the "
-"'end claim' button."
-msgstr ""
-
-#: supdem/templates/supdem/how_it_works.html:67
-msgid "My centre is not in the list. Can it be added please?"
-msgstr ""
-
-#: supdem/templates/supdem/how_it_works.html:68
-#, python-format
-msgid ""
-"You can request the addition of your centre in %(beginlink)sthis form"
-"%(endlink)s."
-msgstr ""
-
-#: supdem/templates/supdem/how_it_works.html:70
+#: supdem/templates/supdem/help.html:48
 msgid "How can I help to make this website a success?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:71
+#: supdem/templates/supdem/help.html:49
 msgid ""
 "The more people know about refugive, the more effective the website will be. "
 "So you help us a lot by spreading the word. Share our initiative on social "
-"media and tell your friends! Furthermore it would help if you add postings. "
+"media and tell your friends! Furthermore it would help if you add a post. "
 "The more items are on this website, the more useful it will become for its "
 "users. Both for refugees and locals."
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:73
-msgid "Why don't I see my posting in the list with postings?"
+#: supdem/templates/supdem/help.html:51
+msgid "Why don't I see my post in the list with posts?"
 msgstr ""
 
-#: supdem/templates/supdem/how_it_works.html:74
+#: supdem/templates/supdem/help.html:52
 msgid ""
 "It could be that you are looking at the wrong list. If you are a local, you "
 "will only see requests by refugees. If you are a refugee, you will only see "
-"offers by locals. It could also be that somebody replied to your posting. In "
+"offers by locals. It could also be that somebody replied to your post. In "
 "that case, we hide it for other people to make sure not too many people "
 "reply to the same posting. Or it could be that your item is expired."
 msgstr ""
@@ -629,66 +490,6 @@ msgstr ""
 #, python-format
 msgid "Requested by <strong>%(username)s</strong>"
 msgstr ""
-
-#: supdem/templates/supdem/index.html:3 supdem/templates/supdem/index.html:5
-#, fuzzy
-#| msgid "Choose a password:"
-msgid "Choose a centre"
-msgstr "اختر كلمة مرور:"
-
-#: supdem/templates/supdem/index.html:14 supdem/templates/supdem/index.html:22
-msgid "I am a refugee."
-msgstr "انا لاجئ."
-
-#: supdem/templates/supdem/index.html:16 supdem/templates/supdem/index.html:44
-msgid "I am a local."
-msgstr "انا ساكن محلي"
-
-#: supdem/templates/supdem/index.html:22
-msgid "This is my centre:"
-msgstr "هذا المركز الخاص بي"
-
-#: supdem/templates/supdem/index.html:27 supdem/templates/supdem/index.html:35
-#: supdem/templates/supdem/index.html:48
-#, fuzzy, python-format
-#| msgid "Your items"
-msgid "1 item"
-msgid_plural "%(counter)s items"
-msgstr[0] "المنشورات الخاصة بك"
-msgstr[1] "المنشورات الخاصة بك"
-msgstr[2] "المنشورات الخاصة بك"
-msgstr[3] "المنشورات الخاصة بك"
-msgstr[4] "المنشورات الخاصة بك"
-msgstr[5] "المنشورات الخاصة بك"
-
-#: supdem/templates/supdem/index.html:31 supdem/templates/supdem/index.html:52
-msgid "More"
-msgstr ""
-
-#: supdem/templates/supdem/index.html:44
-msgid "I am living near this centre:"
-msgstr "انا اعيش بالقرب من هذا المركز"
-
-#: supdem/templates/supdem/index.html:56
-#, fuzzy, python-format
-#| msgid "Your items"
-msgid "one item"
-msgid_plural "%(counter)s items"
-msgstr[0] "المنشورات الخاصة بك"
-msgstr[1] "المنشورات الخاصة بك"
-msgstr[2] "المنشورات الخاصة بك"
-msgstr[3] "المنشورات الخاصة بك"
-msgstr[4] "المنشورات الخاصة بك"
-msgstr[5] "المنشورات الخاصة بك"
-
-#: supdem/templates/supdem/index.html:63
-#, python-format
-msgid ""
-"%(beginlink)sAdd a suggestion%(endlink)s for a centre that we can add to "
-"this list."
-msgstr ""
-"%(beginlink)sإضافة اقتراح%(endlink)s لهذا المركز,  يمكننا أن نضيف  إقتراحك  "
-"إلى هذه القائمة."
 
 #: supdem/templates/supdem/item.html:2
 msgid "Posting:"
@@ -738,52 +539,52 @@ msgstr "نعم, رجاءً"
 msgid "I can help"
 msgstr "يمكنني المساعدة"
 
-#: supdem/templates/supdem/item.html:54
+#: supdem/templates/supdem/item.html:53
 msgid "Manage this item"
 msgstr "إدارة هذا العنصر"
 
-#: supdem/templates/supdem/item.html:57
+#: supdem/templates/supdem/item.html:56
 msgid "Expiry date: "
 msgstr "انتهاء الصلاحية"
 
-#: supdem/templates/supdem/item.html:57
+#: supdem/templates/supdem/item.html:56
 msgid "Extend item"
 msgstr "توسيع العنصر"
 
-#: supdem/templates/supdem/item.html:60
+#: supdem/templates/supdem/item.html:59
 msgid "Delete this item"
 msgstr "حذف هذا العنصر"
 
-#: supdem/templates/supdem/item.html:65
+#: supdem/templates/supdem/item.html:64
 msgid "End claim"
 msgstr "انتهاء الطلب"
 
-#: supdem/templates/supdem/item.html:73
+#: supdem/templates/supdem/item.html:72
 msgid "Report as inappropriate"
 msgstr "الابلاغ عن شيء غير مناسب"
 
-#: supdem/templates/supdem/item.html:81
+#: supdem/templates/supdem/item.html:80
 #, fuzzy, python-format
 #| msgid "Your conversation with"
 msgid "Your conversation with %(the_other_username)s"
 msgstr "محادثتك مع"
 
-#: supdem/templates/supdem/item.html:82
+#: supdem/templates/supdem/item.html:81
 msgid "ended!"
 msgstr ""
 
-#: supdem/templates/supdem/item.html:90
+#: supdem/templates/supdem/item.html:89
 #, python-format
 msgid "<strong>You</strong> wrote on <strong>%(date)s</strong>"
 msgstr ""
 
-#: supdem/templates/supdem/item.html:94
+#: supdem/templates/supdem/item.html:93
 #, python-format
 msgid ""
 "<strong>%(the_other_username)s</strong> wrote on <strong>%(date)s</strong>"
 msgstr ""
 
-#: supdem/templates/supdem/item.html:114
+#: supdem/templates/supdem/item.html:113
 msgid "Add message"
 msgstr "اضافة رسالة"
 
@@ -870,6 +671,10 @@ msgstr "الرجاء اختيار تصنيف"
 #| msgid "Your message:"
 msgid "Your page"
 msgstr "الرسائل الخاص بك"
+
+#: supdem/templates/supdem/mypage.html:7
+msgid "Your items"
+msgstr "المنشورات الخاصة بك"
 
 #: supdem/templates/supdem/mypage.html:12
 msgid "Your messages"
@@ -1350,49 +1155,155 @@ msgstr ""
 msgid "-"
 msgstr ""
 
-#: supdem/views.py:204
-msgid "Your reaction was successfully added"
-msgstr "تم بنجاح إضافة الرد الخاص بك"
-
-#: supdem/views.py:262
-msgid "The item was successfully deleted"
-msgstr "تم بنجاح حذف العنصر"
-
-#: supdem/views.py:281
-msgid "The item was successfully extended"
-msgstr "تم التعديل بنجاح"
-
-#: supdem/views.py:302
-msgid "The claim was successfully deleted"
-msgstr " تم حذفه بنجاح"
-
-#: supdem/views.py:314
+#: supdem/views.py:142
 msgid "Invalid code. Please request a new code."
 msgstr "رمز غير صالح. الرجاء طلب رمز جديد."
 
-#: supdem/views.py:332
+#: supdem/views.py:161
 msgid "The password has been changed"
 msgstr "تم تغيير كلمة المرور"
 
-#: supdem/views.py:366
+#: supdem/views.py:190
 msgid "An email with a password recovery link has been send to you"
 msgstr "تم إرسال بريد الإلكتروني لك يتضمن كلمة مرور مؤقتة"
 
-#: supdem/views.py:386 supdem/views.py:388
-msgid "Incorrect username and/or password"
-msgstr "اسم المستخدم و / أو كلمة المرور غير صحيحة"
-
-#: supdem/views.py:469
-msgid "Your reply was send to the poster of the item"
-msgstr "تم ارسال الرد الخاص بك الى الناشر"
-
-#: supdem/views.py:534
-msgid "The item was successfully added"
+#: supdem/views.py:204
+#, fuzzy
+#| msgid "The item was successfully added"
+msgid "User was successfully added"
 msgstr "تمت اضافة هذا البند بنجاح"
 
-#: templates/admin/base_site.html:3
-msgid "Django site admin"
-msgstr "ادارة موقع Django "
+#~ msgid "Not all questions answered"
+#~ msgstr "ليست كل الاسئلة مجابة"
+
+#~ msgid "Switch language"
+#~ msgstr "تبديل اللغة"
+
+#~ msgid "Log out"
+#~ msgstr "تسجيل الخروج"
+
+#~ msgid "Log in"
+#~ msgstr "تسجيل الدخول"
+
+#, fuzzy
+#~| msgid "I am a refugee."
+#~ msgid "I am a refugee"
+#~ msgstr "انا لاجئ."
+
+#, fuzzy
+#~| msgid "I am a local."
+#~ msgid "I am a local"
+#~ msgstr "انا ساكن محلي"
+
+#~ msgid "change"
+#~ msgstr "تغيير"
+
+#~ msgid ""
+#~ "Not living in or near %(centre)s? Choose <a href=\"%(navigation_url)s?"
+#~ "ignoreses=1\">another centre</a>"
+#~ msgstr ""
+#~ "لا اعيش بالقرب من %(centre)s? أختر<a href=\"%(navigation_url)s?"
+#~ "ignoreses=1\">مركز اخر</a>"
+
+#~ msgid "Are you not a refugee?"
+#~ msgstr "انت لست لاجئ؟"
+
+#~ msgid "Refugive for locals"
+#~ msgstr " Refugive للسكان المحليين"
+
+#~ msgid "Are you a refugee?"
+#~ msgstr "هل أنت لاجئ؟"
+
+#~ msgid "Refugive for refugees"
+#~ msgstr "Refugive للاجئين"
+
+#~ msgid "email"
+#~ msgstr "بريد إلكتروني"
+
+#~ msgid "password"
+#~ msgstr "كلمة المرور"
+
+#~ msgid "I lost my password"
+#~ msgstr "لقد فقدت كلمة المرور الخاصة بي"
+
+#~ msgid ""
+#~ "Your account will automatically be created the first time you post "
+#~ "something or react to a post."
+#~ msgstr ""
+#~ "سيتم تلقائيا إنشاء حسابك في المرة الأولى التي تنشر فيها شيئا أو ترد على "
+#~ "منشور"
+
+#, fuzzy
+#~| msgid "Your email address:"
+#~ msgid "Who will see my email address?"
+#~ msgstr "عنوان بريدك الإلكتروني"
+
+#, fuzzy
+#~| msgid "Choose a password:"
+#~ msgid "Choose a centre"
+#~ msgstr "اختر كلمة مرور:"
+
+#~ msgid "I am a refugee."
+#~ msgstr "انا لاجئ."
+
+#~ msgid "I am a local."
+#~ msgstr "انا ساكن محلي"
+
+#~ msgid "This is my centre:"
+#~ msgstr "هذا المركز الخاص بي"
+
+#, fuzzy
+#~| msgid "Your items"
+#~ msgid "1 item"
+#~ msgid_plural "%(counter)s items"
+#~ msgstr[0] "المنشورات الخاصة بك"
+#~ msgstr[1] "المنشورات الخاصة بك"
+#~ msgstr[2] "المنشورات الخاصة بك"
+#~ msgstr[3] "المنشورات الخاصة بك"
+#~ msgstr[4] "المنشورات الخاصة بك"
+#~ msgstr[5] "المنشورات الخاصة بك"
+
+#~ msgid "I am living near this centre:"
+#~ msgstr "انا اعيش بالقرب من هذا المركز"
+
+#, fuzzy
+#~| msgid "Your items"
+#~ msgid "one item"
+#~ msgid_plural "%(counter)s items"
+#~ msgstr[0] "المنشورات الخاصة بك"
+#~ msgstr[1] "المنشورات الخاصة بك"
+#~ msgstr[2] "المنشورات الخاصة بك"
+#~ msgstr[3] "المنشورات الخاصة بك"
+#~ msgstr[4] "المنشورات الخاصة بك"
+#~ msgstr[5] "المنشورات الخاصة بك"
+
+#~ msgid ""
+#~ "%(beginlink)sAdd a suggestion%(endlink)s for a centre that we can add to "
+#~ "this list."
+#~ msgstr ""
+#~ "%(beginlink)sإضافة اقتراح%(endlink)s لهذا المركز,  يمكننا أن نضيف  "
+#~ "إقتراحك  إلى هذه القائمة."
+
+#~ msgid "Your reaction was successfully added"
+#~ msgstr "تم بنجاح إضافة الرد الخاص بك"
+
+#~ msgid "The item was successfully deleted"
+#~ msgstr "تم بنجاح حذف العنصر"
+
+#~ msgid "The item was successfully extended"
+#~ msgstr "تم التعديل بنجاح"
+
+#~ msgid "The claim was successfully deleted"
+#~ msgstr " تم حذفه بنجاح"
+
+#~ msgid "Incorrect username and/or password"
+#~ msgstr "اسم المستخدم و / أو كلمة المرور غير صحيحة"
+
+#~ msgid "Your reply was send to the poster of the item"
+#~ msgstr "تم ارسال الرد الخاص بك الى الناشر"
+
+#~ msgid "Django site admin"
+#~ msgstr "ادارة موقع Django "
 
 #, fuzzy
 #~| msgid "About us"

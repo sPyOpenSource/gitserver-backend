@@ -106,6 +106,7 @@ class AddUserForm(forms.Form):
             username=self.cleaned_data['username']
         )
         newuser.save()
+        self.cleaned_data['user'] = newuser
         return self.cleaned_data
 
 
