@@ -68,7 +68,6 @@ WSGI_APPLICATION = 'scrum.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-USE_MYSQL = os.environ.get('OPENSHIFT_MYSQL_DB_USERNAME')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
