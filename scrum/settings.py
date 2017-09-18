@@ -10,12 +10,12 @@ LANGUAGES = [('nl', 'Nederlands')]
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w6**ci+meh=n)o_2ee5qga7ubb&pb30=iyx^5$+v-_iv+u)!nw'
+SECRET_KEY = os.getenv('SECRET_KEY', False) or 'this is not a relevant secret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -106,8 +106,6 @@ AUTH_USER_MODEL = 'supdem.MyUser'
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-ADMIN_MEDIA_PREFIX = '/static/'
-MEDIA_ROOT = '/static/media/'
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
@@ -141,19 +139,11 @@ CLOUDINARY = {
     'api_secret': os.getenv('CLOUDINARY_API_SECRET', False) or 'this is not a relevant secret'
 }
 
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_HOST = os.getenv('HOSTNAME')
 EMAIL_HOST = '127.0.0.1'
-#EMAIL_PORT = 587
 EMAIL_PORT = 25
-#EMAIL_HOST_USER = os.getenv('USERNAME
 EMAIL_HOST_USER = ''
-#EMAIL_HOST_PASSWORD = os.getenv('PASSWORD')
 EMAIL_HOST_PASSWORD = ''
-#EMAIL_USE_TLS = True
 EMAIL_USE_TLS = False
 PASSWORD_RESET_PERIOD_IN_HOURS = 48
-#DOMAIN_FOR_EMAILS = "http://refugive.com"
 DOMAIN_FOR_EMAILS = "https://s55969da3.adsl.online.nl"
-#DEFAULT_FROM_EMAIL = 'Maaike and Jasper from refugive <noreply@refugive.com>'
 DEFAULT_FROM_EMAIL = 'Refugive.com <noreply@s55969da3.adsl.online.nl>'
