@@ -18,6 +18,7 @@ class ItemFilter(django_filters.FilterSet):
         model = Item
         fields = ('expirydate',)
 
+
 # abstract form that can be used by all other forms that accept logged in users,
 # new users and users who are not logged in, but have an account.
 class LoginAndModifyForm(forms.Form):

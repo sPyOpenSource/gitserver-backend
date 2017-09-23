@@ -17,8 +17,16 @@
   <meta property="og:title" content="Refugive.com" />
   <meta property="og:description" content="{% block metadesc %}{% endblock %}{% trans 'A refugee may need something. A local might have a spare item. Use this website to get in touch.' %}" />
   <meta property="og:url" content="http://www.refugive.com" />
+<!--
   <link rel="stylesheet" href="/static/css/bootstrap.min.css">
   <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css" type="text/css"/>
+-->
+<link rel="stylesheet" href="/static/css/bootstrap.css">
+<script src="/static/vendor/jquery.js"></script>
+<script src="/static/css/bootstrap.js"></script>
+
+<link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+
 	<!-- Google Analytics tracking code -->
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -35,14 +43,30 @@
 	</style>
 </head>
 <body class="{% block bodyclass %}{% endblock bodyclass %} v2">
-  <header>
-  <ul class="nav nav-tabs">
-      <li role="presentation"><a href="/">{% trans 'Home' %}</a>
-      <li role="presentation"><a href="/static/index.html#/help">{% trans 'Help' %}</a>
-      <li role="presentation"><a href="/static/index.html" class="logout">{% trans 'Login' %}</a>
-      <li role="presentation"><a href="/adduser" class="logout">{% trans 'Register' %}</a>
-  </ul>
-  </header>
+
+    <nav id="myNavbar" class="navbar navbar-default navbar inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Refugive.com</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    <ul class="nav navbar-nav">
+        <li><a href="/static/index.html#/help">{% trans 'Help' %}</a></li>
+        <li><a href="/static/index.html" class="logout">{% trans 'Login' %}</a></li>
+        <li><a href="/adduser" class="logout">{% trans 'Register' %}</a></li>
+    </ul>
+
+      </div>
+    </div>
+  </nav>
+
   <!-- The following code shows the alerts. Like 'new item created', 'claim removed' and so on-->
   <div class="container-fluid">
   {% block content %}{% endblock %}

@@ -1,3 +1,8 @@
+v1.3 XW 23-09-2017
+changed: navbar to dropdown-menu
+added: custom css
+added: readme file
+
 v1.2 XW 17-09-2017
 changed: the sender name to Refugive (issue #5)
 changed: the subject of the notification email is now the title of the item (issue #4)
