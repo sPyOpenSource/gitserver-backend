@@ -24,7 +24,7 @@ class ItemSerializer(serializers.HyperlinkedModelSerializer):
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
-        fields = ('url', 'name')
+        fields = ('id', 'url', 'name')
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):

@@ -88,9 +88,9 @@ class AddUserForm(forms.Form):
         self.request = kwargs.pop('request', None)
         super(AddUserForm, self).__init__(*args, **kwargs)
 
-    username = forms.CharField(max_length=50, required=False)
-    password = forms.CharField(max_length=50, widget=forms.PasswordInput, required=False)
-    email = forms.EmailField(required=False)
+    username = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=50, widget=forms.PasswordInput)
+    email = forms.EmailField()
     group_id = forms.IntegerField()
 
     def clean(self):
