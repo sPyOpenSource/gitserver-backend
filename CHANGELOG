@@ -1,7 +1,5 @@
-v1.5 XW 03-10-2017
-changed: custom CSS and html structure
-updated: translation file
-changed: languages buttons to flags
+v1.5 XW 13-10-2017
+removed: groups and categories
 
 v1.4 XW 01-10-2017
 added: unittests

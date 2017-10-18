@@ -1,30 +1,17 @@
 from rest_framework import serializers
-from .models import MyUser, Category, Item, Message
-from django.contrib.auth.models import Group
+from .models import MyUser, Item, Message
 
 
 class MyUserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = MyUser
-        fields = ('url', 'email', 'username', 'group')
-
-
-class CategorySerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Category
-        fields = ('id', 'name')
+        fields = ('url', 'username')
 
 
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
-        fields = ('id', 'creationdate', 'category', 'title', 'description', 'owner', 'expirydate', 'image')
-
-
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ('id', 'url', 'name')
+        fields = ('id', 'creationdate', 'title', 'description', 'owner', 'expirydate', 'image')
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):

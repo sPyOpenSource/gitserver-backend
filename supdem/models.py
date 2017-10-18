@@ -2,11 +2,10 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 from django.core.urlresolvers import reverse
-from django.contrib.auth.models import Group
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, username, group_id, password=None):
+    def create_user(self, email, username, password=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
@@ -16,8 +15,7 @@ class MyUserManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
-            username=username,
-            group_id=group_id
+            username=username
         )
 
         user.set_password(password)
@@ -32,8 +30,7 @@ class MyUserManager(BaseUserManager):
         user = self.create_user(
             email,
             username='admin',
-            password=password,
-            group_id=1
+            password=password
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -49,7 +46,6 @@ class MyUser(AbstractBaseUser):
     username = models.CharField(max_length=20)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    group = models.ForeignKey(Group)
     objects = MyUserManager()
 
     USERNAME_FIELD = 'email'
@@ -148,24 +144,11 @@ class Centre(models.Model):
         return cls.objects.raw(sql)
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-            return self.name
-
-
-# Does this table need a languagecode column as well?
 class Item(models.Model):
-    #poster = models.ForeignKey(MyUser)
     # centre is not a redundant field (yet) as the poster does not have a centre
     #centre = models.ForeignKey(Centre)
-    # is_offer is not a redundant field (yet) as the poster does not have a usertype
-    #is_offer = models.BooleanField()
-    #active_dialogue = models.PositiveIntegerField(default=0, unique=False)
     creationdate = models.DateTimeField(auto_now_add=True)
     expirydate = models.DateTimeField()
-    category = models.ForeignKey(Category)
     title = models.CharField(max_length=200)
     description = models.TextField()
     owner = models.ForeignKey(MyUser)
@@ -175,14 +158,6 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title
-
-    '''def for_usertype(self):
-        return 'refugee' if self.is_offer else 'local'
-
-    def url(self):
-        return reverse('item', kwargs={
-            'centreslug': self.centre.slug, 'usertype': self.for_usertype(), 'itemid': self.id
-        })'''
 
 
 class Message(models.Model):

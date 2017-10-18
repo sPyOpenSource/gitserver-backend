@@ -21,8 +21,14 @@ To run the webserver:
 
 Now you can open a webbrowser and type http://localhost:8000.
 
-Admin username and password
-----------------------------
+Testing
+-------
+To test the code you can run following command:
+
+	./manage.py test
+
+Admin user
+----------
 Open a terminal and run this command:
 
 	./manage.py createsuperuser

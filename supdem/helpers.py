@@ -3,7 +3,9 @@ from django.core.exceptions import ImproperlyConfigured
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils import translation
-from .models import EmailLog
+from django.utils.crypto import get_random_string
+from datetime import datetime, timedelta
+from .models import EmailLog, ResetPasswordKey
 
 
 # todo jas: use https://docs.djangoproject.com/en/1.8/ref/utils/#django.utils.translation.activate
@@ -23,7 +25,7 @@ def send_template_email(to_user, email_name, context={}, from_user=None):
     # if the tag ends with url, prepend it with the domain and remove the languagecode
     for name, value in context.items():
         if name[-3:] == 'url':
-            context[name] = settings.DOMAIN_FOR_EMAILS + value[3:]
+            context[name] = settings.DOMAIN_FOR_EMAILS + value
 
     # get the translated email
     cur_language = translation.get_language()
@@ -59,3 +61,17 @@ def send_template_email(to_user, email_name, context={}, from_user=None):
         status=status,
     ).save()
     return status
+
+
+def reset(user):
+    # delete old keys if they exist
+    ResetPasswordKey.objects.filter(user=user).delete()
+    newresetpasswordkey = ResetPasswordKey(
+        user=user,
+        key=get_random_string(20),
+        expirydate=datetime.utcnow() + timedelta(hours=settings.PASSWORD_RESET_PERIOD_IN_HOURS)
+    )
+    newresetpasswordkey.save()
+    send_template_email(user, 'password_reset', {
+        'url': '/static/index.html#/password/' + newresetpasswordkey.key
+    })

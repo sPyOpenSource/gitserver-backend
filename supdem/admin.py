@@ -5,7 +5,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 # Register your models here.
-from .models import Centre, Category, Message, Item, MyUser
+from .models import Centre, Message, Item, MyUser
 
 
 class UserCreationForm(forms.ModelForm):
@@ -83,9 +83,8 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(MyUser, UserAdmin)
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.
-#admin.site.unregister(Group)
+admin.site.unregister(Group)
 
 admin.site.register(Centre)
 admin.site.register(Item)
-admin.site.register(Category)
 admin.site.register(Message)
