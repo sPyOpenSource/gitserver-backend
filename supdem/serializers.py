@@ -11,7 +11,7 @@ class MyUserSerializer(serializers.HyperlinkedModelSerializer):
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
-        fields = ('id', 'creationdate', 'title', 'description', 'owner', 'expirydate', 'image')
+        fields = ('id', 'creationdate', 'title', 'description', 'owner', 'expirydate')
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):

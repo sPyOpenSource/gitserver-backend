@@ -3,13 +3,13 @@ Refugive
 
 Motivation
 ----------
-This is a sharing Website. It helps people to exchange good for free.
+This is a sharing Website. It helps us to exchange source codes.
 
 Installation
 ------------
 Run following command to get the source code:
 
-	git clone https://spy@s55969da3.adsl.online.nl/refugive/back-end.git --recursive
+	git clone https://spy@s55969da3.adsl.online.nl/gitserver/back-end.git --recursive
 
 Now you have to go inside the folder. First you have to install the requirements:
 
@@ -27,8 +27,8 @@ To test the code you can run following command:
 
 	./manage.py test
 
-Admin user
-----------
+Admin users
+-----------
 Open a terminal and run this command:
 
 	./manage.py createsuperuser
@@ -36,10 +36,6 @@ Open a terminal and run this command:
 You should be now able to login at:
 
 	http://localhost:8000/admin/
-
-Using These Examples
---------------------
-The various folders and files in this repository correspond to the projects created throughout the book.
 
 Terms & Conditions
 ------------------

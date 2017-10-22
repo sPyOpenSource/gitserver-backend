@@ -9,8 +9,17 @@ LANGUAGES = [('nl', 'Nederlands'),('en', 'English')]
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
+def generator():
+
+    # Based on Django's SECRET_KEY hash generator
+    # https://github.com/django/django/blob/9893fa12b735f3f47b35d4063d86dddf3145cb25/django/core/management/commands/startproject.py
+
+    from django.utils.crypto import get_random_string
+    chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+    return get_random_string(50, chars)
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', False) or 'this is not a relevant secret'
+SECRET_KEY = generator()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,7 +94,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'nl'
+LANGUAGE_CODE = 'en'
 
 MAX_ITEMS_IN_LIST=10
 
@@ -130,14 +139,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-# Cloudinary and Sentry configuration
-
-CLOUDINARY = {
-    'cloud_name': 'dvrrqjzay',
-    'api_key': '587771642844978',
-    'api_secret': os.getenv('CLOUDINARY_API_SECRET', False) or 'this is not a relevant secret'
-}
-
 EMAIL_HOST = '127.0.0.1'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = ''
@@ -145,4 +146,4 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 PASSWORD_RESET_PERIOD_IN_HOURS = 48
 DOMAIN_FOR_EMAILS = "https://s55969da3.adsl.online.nl"
-DEFAULT_FROM_EMAIL = 'Refugive.com <noreply@s55969da3.adsl.online.nl>'
+DEFAULT_FROM_EMAIL = 'Git Server <noreply@s55969da3.adsl.online.nl>'

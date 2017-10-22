@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from cloudinary import uploader
 
 from django.http import JsonResponse
 from django.conf import settings
@@ -84,11 +83,6 @@ def csrf_token(request):
 
 def additem(request):
     if request.method == 'POST':
-        image_name = ""
-        if 'photo' in request.FILES:
-            cloudinary_photo = uploader.upload(request.FILES['photo'])
-            if 'public_id' in cloudinary_photo:
-                image_name = cloudinary_photo['public_id']
         user = MyUser.objects.get(id=request.POST['owner'])
         expirydate = request.POST.get('expirydate')
         if expirydate:
@@ -99,8 +93,7 @@ def additem(request):
             owner=user,
             expirydate=expirydate,
             title=request.POST['title'],
-            description=request.POST['description'],
-            image=image_name
+            description=request.POST['description']
         )
         item.save()
         return redirect('/static/index.html')

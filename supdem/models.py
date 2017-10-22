@@ -77,84 +77,13 @@ class MyUser(AbstractBaseUser):
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
-################################
-# Our own classes follow below #
-################################
-class Centre(models.Model):
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
-    address = models.CharField(max_length=200)
-    city = models.CharField(max_length=200)
-    countrycode = models.CharField(max_length=2)
-    latitude = models.FloatField()
-    longitude = models.FloatField()
-    is_active = models.BooleanField(default=True)
-    show_message_for_refugees = models.BooleanField(default=False)
-    show_message_for_locals = models.BooleanField(default=False)
-
-    def __str__(self):
-            return self.name
-
-    @classmethod
-    def centres_with_numitems(cls):
-        """
-        Returns all centres with the nr of items per center.
-
-        Note that the query is quite tricky as I also need centres without items.
-        Furthermore, the two SUM(IF())'s are written in this way to give the correct answer
-        in cases where there are no items for a specific center, as i.is_offer would be NULL
-        in that case.
-        """
-        if settings.USE_MYSQL:
-            sql = """
-        SELECT
-            c.*,
-            SUM(IF(i.id IS NULL,0,1)) as numitems_total,
-            SUM(IF(i.is_offer = 0,1,0)) as numitems_fromrefugees,
-            SUM(IF(i.is_offer = 1,1,0)) as numitems_fromlocals
-        FROM supdem_centre c LEFT JOIN supdem_item i
-        ON
-            i.centre_id = c.id AND
-            (
-                i.id IS NULL OR
-                ( i.active_dialogue = 0 AND i.expirydate > UTC_TIMESTAMP() )
-            )
-        WHERE c.is_active
-        GROUP BY c.id
-        ORDER BY c.name ASC
-            """
-        else:
-            sql = """
-        SELECT
-            c.*,
-            5 as numitems_total,
-            1 as numitems_fromrefugees,
-            4 as numitems_fromlocals
-        FROM supdem_centre c LEFT JOIN supdem_item i
-        ON
-            i.centre_id = c.id AND
-            (
-                i.id IS NULL OR
-                ( i.active_dialogue = 0 AND i.expirydate > datetime('now') )
-            )
-        WHERE c.is_active
-        GROUP BY c.id
-        ORDER BY c.name ASC
-            """
-        return cls.objects.raw(sql)
-
 
 class Item(models.Model):
-    # centre is not a redundant field (yet) as the poster does not have a centre
-    #centre = models.ForeignKey(Centre)
     creationdate = models.DateTimeField(auto_now_add=True)
     expirydate = models.DateTimeField()
     title = models.CharField(max_length=200)
     description = models.TextField()
     owner = models.ForeignKey(MyUser)
-    # image is semi-redundant. A photo id would have made more sense, but this
-    # solution is much more efficient for showing lists of images
-    image = models.CharField(max_length=200, default="")
 
     def __str__(self):
         return self.title
