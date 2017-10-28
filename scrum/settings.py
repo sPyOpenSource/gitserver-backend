@@ -18,7 +18,6 @@ def generator():
     chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
     return get_random_string(50, chars)
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = generator()
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -79,17 +78,13 @@ WSGI_APPLICATION = 'scrum.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'scrum',
+	'USER': 'django',
+	'PASSWORD': 'django',
+	'HOST': '192.168.1.11'
     }
 }
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'scrum',
-#    }
-#}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -97,8 +92,6 @@ DATABASES = {
 LANGUAGE_CODE = 'en'
 
 MAX_ITEMS_IN_LIST=10
-
-ITEM_LIFETIME_IN_DAYS=60
 
 TIME_ZONE = 'UTC'
 
@@ -113,14 +106,14 @@ AUTH_USER_MODEL = 'supdem.MyUser'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/git/'
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
 STATICFILES_DIRS = [
-     os.path.join(BASE_DIR, "static"),
+     os.path.join(BASE_DIR, "git"),
 ]
 
 OAUTH2_PROVIDER = {

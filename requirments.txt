@@ -1,5 +1,4 @@
 Django
-cloudinary
 djangorestframework
 django-filter
 markdown

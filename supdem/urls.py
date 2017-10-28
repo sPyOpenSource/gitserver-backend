@@ -5,7 +5,7 @@ from rest_framework import routers
 
 
 # Routers provide an easy way of automatically determining the URL conf.
-router = routers.DefaultRouter()
+router = routers.SimpleRouter(trailing_slash=False)
 router.register(r'items', views.ItemViewSet)
 router.register(r'users', views.MyUserViewSet)
 
@@ -16,5 +16,6 @@ urlpatterns = [
     url(r'^csrf_token$', views.csrf_token, name='csrf'),
     url(r'^messages$', views.MessageList.as_view()),
     url(r'^resetpassword$', views.resetpassword, name='resetpassword'),
-    url(r'^token-auth$', obtain_jwt_token)
+    url(r'^token-auth$', obtain_jwt_token),
+    url(r'^wiki$', views.WikiView.as_view(), name='wiki')
 ]

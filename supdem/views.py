@@ -5,15 +5,14 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.utils.translation import ugettext as _
 from django.middleware import csrf
 
 from .helpers import send_template_email, reset
-from .models import Item, Message, ResetPasswordKey, MyUser
+from .models import Item, Message, ResetPasswordKey, MyUser, Wiki
 from .forms import AddUserForm, NewPasswordForm, ResetPasswordForm, ItemFilter
-from supdem.serializers import MyUserSerializer, ItemSerializer, MessageSerializer
+from supdem.serializers import MyUserSerializer, ItemSerializer, MessageSerializer, WikiSerializer
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -69,6 +68,17 @@ class MessageList(APIView):
         return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+class WikiView(APIView):
+    """
+    List all wikis
+    """
+    permission_classes = (AllowAny,)
+    def get(self, request, format=None):
+        queryset = Wiki.objects.all()
+        serializer_class = WikiSerializer(queryset, many=True, context={'request': request})
+        return Response(serializer_class.data)
+
+
 class MyUserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -84,23 +94,17 @@ def csrf_token(request):
 def additem(request):
     if request.method == 'POST':
         user = MyUser.objects.get(id=request.POST['owner'])
-        expirydate = request.POST.get('expirydate')
-        if expirydate:
-            expirydate = datetime.strptime(expirydate, '%Y-%m-%dT%H:%M:%S')
-        else:
-            expirydate = datetime.now() + timedelta(days=settings.ITEM_LIFETIME_IN_DAYS)
         item = Item(
             owner=user,
-            expirydate=expirydate,
             title=request.POST['title'],
             description=request.POST['description']
         )
         item.save()
-        return redirect('/static/index.html')
+        return JsonResponse({'status': 201})
 
 
 def index(request):
-    return redirect('/static/index.html')
+    return redirect('/git/index.html')
 
 
 def resetpassword(request):
@@ -111,7 +115,7 @@ def resetpassword(request):
             if qs.count() == 1:
                 user = qs[0]
                 reset(user)
-                return redirect('/static/index.html')
+                return JsonResponse({'status': 201})
         else:
             validkeys = ResetPasswordKey.objects.filter(
                 expirydate__gt=datetime.utcnow(),
@@ -130,7 +134,7 @@ def resetpassword(request):
                     )
                     login(request, auth_user)               # log the user in
                     messages.success(request, _('The password has been changed'))
-                    return HttpResponseRedirect(reverse('index'))
+                    return JsonResponse({'status': 200})
 
 
 def adduser(request):

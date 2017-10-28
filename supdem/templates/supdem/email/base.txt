@@ -7,4 +7,4 @@
 
 {% blocktrans %}Best regards,
 
-the Refugive team{% endblocktrans %}
+the Git Server team{% endblocktrans %}

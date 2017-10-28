@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 from django.core.urlresolvers import reverse
+from sh import git, ErrorReturnCode, Command
 
 
 class MyUserManager(BaseUserManager):
@@ -80,7 +81,6 @@ class MyUser(AbstractBaseUser):
 
 class Item(models.Model):
     creationdate = models.DateTimeField(auto_now_add=True)
-    expirydate = models.DateTimeField()
     title = models.CharField(max_length=200)
     description = models.TextField()
     owner = models.ForeignKey(MyUser)
@@ -107,6 +107,14 @@ class EmailLog(models.Model):
     to_user = models.ForeignKey(MyUser)
     email_name = models.CharField(max_length=50)
     status = models.PositiveSmallIntegerField()
+
+
+class Wiki(models.Model):
+    title = models.CharField(max_length=200)
+
+    def pull(self, remote):
+        log = git.pull('-s', 'recursive', '-X', 'ours', remote, 'HEAD').stdout.decode('utf8')
+        return log
 
 
 # I just created this so I have a place to write debug messages. :-D

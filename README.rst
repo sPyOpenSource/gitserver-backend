@@ -9,7 +9,7 @@ Installation
 ------------
 Run following command to get the source code:
 
-	git clone https://spy@s55969da3.adsl.online.nl/gitserver/back-end.git --recursive
+	git clone git://s55969da3.adsl.online.nl/gitserver/back-end.git --recursive
 
 Now you have to go inside the folder. First you have to install the requirements:
 

@@ -73,5 +73,5 @@ def reset(user):
     )
     newresetpasswordkey.save()
     send_template_email(user, 'password_reset', {
-        'url': '/static/index.html#/password/' + newresetpasswordkey.key
+        'url': '/git/index.html#/password/' + newresetpasswordkey.key
     })

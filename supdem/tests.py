@@ -11,7 +11,7 @@ class SimpleTest(TestCase):
         response = self.client.get('/')
 
         # Check that the response is OK.
-        self.assertRedirects(response, '/static/index.html', status_code=302, target_status_code=404)
+        self.assertRedirects(response, '/git/index.html', status_code=302, target_status_code=404)
 
     def test_api(self):
         response = self.client.get('/api/csrf_token')
@@ -29,17 +29,17 @@ class SimpleTest(TestCase):
         token = response.json()['token']'''
 
         response = self.client.post('/api/additem', {'owner': 1, 'title': 'test', 'description': 'test', 'csrfmiddlewaretoken': csrf_token})
-        self.assertRedirects(response, '/static/index.html', status_code=302, target_status_code=404)
+        self.assertEqual(response.status_code, 200)
         response = self.client.post('/api/additem', {'owner': 1, 'title': 'test', 'description': 'test', 'csrfmiddlewaretoken': csrf_token, 'expirydate': '2007-03-04T21:08:12'})
-        self.assertRedirects(response, '/static/index.html', status_code=302, target_status_code=404)
+        self.assertEqual(response.status_code, 200)
 
         response = self.client.post('/api/resetpassword', {'email': 'test@test.nl', 'csrfmiddlewaretoken': csrf_token})
-        self.assertRedirects(response, '/static/index.html', status_code=302, target_status_code=404)
+        self.assertEqual(response.status_code, 200)
 
-        response = self.client.get('/api/items/')
+        response = self.client.get('/api/items')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.json()), 2)
-        response = self.client.get('/api/items/?expirydate=2006-03-04T21:00:00')
+        response = self.client.get('/api/items?expirydate=2006-03-04T21:00:00')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.json()), 0)
 
@@ -52,3 +52,6 @@ class SimpleTest(TestCase):
         self.assertEqual(len(response.json()), 1)
         response = self.client.get('/api/messages?item=2', HTTP_AUTHORIZATION = 'JWT ' + token)
         self.assertEqual(len(response.json()), 0)'''
+
+        response = self.client.get('/api/wiki')
+        self.assertEqual(response.status_code, 200)
