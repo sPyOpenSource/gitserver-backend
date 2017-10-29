@@ -1,3 +1,6 @@
+v1.8 XW 29-10-2017
+updated: front-end to version 1.11
+
 v1.7 XW 28-10-2017
 moved: static to git
 changed: sqlite to postgresql
