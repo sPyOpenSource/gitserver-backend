@@ -4,3 +4,4 @@ django-filter
 markdown
 djangorestframework-jwt
 six>=1.9.0
+psycopg2
