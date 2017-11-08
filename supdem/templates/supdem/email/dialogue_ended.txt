@@ -1,9 +1,0 @@
-{% extends "supdem/email/base.txt" %}{% load i18n %}
-
-
-{% block subject %}{% trans "A dialogue was ended" %}{% endblock %}
-
-
-{% block body_txt %}
-{% blocktrans %}{{ ender_username }} ended the dialogue for posting '{{ title }}' on Refugive.com. This means that the posting is visible for all users again. Go to {{ url }} to see the posting. After logging in you will be able to see the dialogue.{% endblocktrans %}
-{% endblock %}

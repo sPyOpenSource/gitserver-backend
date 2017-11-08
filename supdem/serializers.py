@@ -1,26 +1,14 @@
 from rest_framework import serializers
-from .models import MyUser, Item, Message, Wiki
-
-
-class MyUserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = MyUser
-        fields = ('url', 'username')
+from .models import Item, Message
 
 
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
-        fields = ('id', 'creationdate', 'title', 'description', 'owner')
+        fields = ('id', 'creationdate', 'title', 'description')
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Message
-        fields = ('id', 'creationdate', 'item', 'owner', 'text')
-
-
-class WikiSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Wiki
-        fields = ('id', 'title')
+        fields = ('id', 'creationdate', 'item', 'text')

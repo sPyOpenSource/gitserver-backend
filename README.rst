@@ -27,16 +27,6 @@ To test the code you can run following command:
 
 	./manage.py test
 
-Admin users
------------
-Open a terminal and run this command:
-
-	./manage.py createsuperuser
-
-You should be now able to login at:
-
-	http://localhost:8000/admin/
-
 Terms & Conditions
 ------------------
 This application is base on an example from “Lightweight Django by Julia Elman and Mark Lavin (O’Reilly). Copyright 2014 Julia Elman and Mark Lavin. 978-1-4919-4594-0.”

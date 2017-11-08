@@ -1,9 +1,0 @@
-{% extends "supdem/email/base.txt" %}{% load i18n %}
-
-
-{% block subject %}{% trans "An item was deleted" %}{% endblock %}
-
-
-{% block body_txt %}
-{% blocktrans %}{{ ender_username }} deleted the posting '{{ title }}' on Refugive.com. Go to {{ url }} to see the posting. After logging in you will be able to see the dialogue.{% endblocktrans %}
-{% endblock %}
