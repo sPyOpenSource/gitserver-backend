@@ -9,5 +9,5 @@ class Item(models.Model):
 
 class Message(models.Model):
     creationdate = models.DateTimeField(auto_now_add=True)
-    item = models.ForeignKey(Item)
+    item = models.ForeignKey(Item, on_delete=models.PROTECT)
     text = models.TextField()

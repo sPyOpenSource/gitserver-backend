@@ -1,3 +1,8 @@
+v2.1 XW 21-12-2019
+fixed: model problem
+added: local database at debug mode
+fixed: requirments problem
+
 v2.0 XW 10-11-2017
 updated: front-end to version 2.0
 
@@ -38,10 +43,10 @@ added: readme file
 v1.2 XW 17-09-2017
 changed: the sender name to Refugive (issue #5)
 changed: the subject of the notification email is now the title of the item (issue #4)
-add: an e-mail notification for creating an account (issue #3)
+added: an e-mail notification for creating an account (issue #3)
 
 v1.1 XW 10-09-2017
-add: a front page which visitors (issue #1)
-add: an e-mail notification for receiving a message (issue #2)
+added: a front page which visitors (issue #1)
+added: an e-mail notification for receiving a message (issue #2)
 
 v1.0 initial version XW 05-06-2017
