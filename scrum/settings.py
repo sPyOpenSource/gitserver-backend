@@ -1,6 +1,7 @@
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import time
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -50,6 +51,11 @@ if DEBUG:
         }
     }
 else:
+    response = -1
+    hostname = "192.168.1.11"
+    while response != 0:
+        response = os.system("ping -c 1 " + hostname)
+        time.sleep(5)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',

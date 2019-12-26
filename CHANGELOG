@@ -1,3 +1,6 @@
+v2.2 xW 26-12-2019
+fixed: no database connection problem
+
 v2.1 XW 21-12-2019
 fixed: model problem
 added: local database at debug mode
