@@ -1,5 +1,5 @@
-GitServerBackend
-================
+Git Server Backend
+==================
 
 Motivation
 ----------
