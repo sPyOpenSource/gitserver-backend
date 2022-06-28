@@ -1,5 +1,5 @@
 from . import views
-from django.conf.urls import url, include
+from django.conf.urls import re_path, include
 from rest_framework import routers
 
 
@@ -9,5 +9,5 @@ router.register(r'items', views.ItemViewSet)
 router.register(r'messages', views.MessageViewSet)
 
 urlpatterns = [
-    url(r'^', include(router.urls))
+    re_path(r'^', include(router.urls))
 ]
